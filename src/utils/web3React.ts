@@ -7,7 +7,6 @@ import getNodeUrl from './getRpcUrl'
 
 const POLLING_INTERVAL = 12000
 const rpcUrl = getNodeUrl()
-console.log(rpcUrl);
 const chainId = parseInt(process.env.REACT_APP_CHAIN_ID, 10)
 
 const injected = new InjectedConnector({ supportedChainIds: [chainId] })

@@ -8,14 +8,12 @@ import { useMasterchef, useSousChef } from './useContract'
 const useStake = (pid: number) => {
   const dispatch = useAppDispatch()
   const { account } = useWeb3React()
-  const masterChefContract = useMasterchef()
 
   const handleStake = useCallback(
     async (amount: string) => {
-      const txHash = await stake(masterChefContract, pid, amount, account)
       dispatch(fetchFarmUserDataAsync(account))
     },
-    [account, dispatch, masterChefContract, pid],
+    [account, dispatch],
   )
 
   return { onStake: handleStake }

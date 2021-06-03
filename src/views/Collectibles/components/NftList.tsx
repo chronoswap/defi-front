@@ -5,7 +5,6 @@ import useGetWalletNfts from 'hooks/useGetWalletNfts'
 import NftCard from './NftCard'
 import NftGrid from './NftGrid'
 import BunnySpeciaCard from './NftCard/BunnySpecialCard'
-import EasterNftCard from './NftCard/EasterNftCard'
 
 /**
  * A map of bunnyIds to special campaigns (NFT distribution)
@@ -15,9 +14,6 @@ import EasterNftCard from './NftCard/EasterNftCard'
 const nftComponents = {
   10: BunnySpeciaCard,
   11: BunnySpeciaCard,
-  12: EasterNftCard,
-  13: EasterNftCard,
-  14: EasterNftCard,
 }
 
 const NftList = () => {

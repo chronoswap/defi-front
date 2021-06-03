@@ -74,7 +74,7 @@ const config: MenuEntry[] = [
       },
       {
         label: 'Github',
-        href: 'https://github.com/oneThousandSwaps',
+        href: 'https://github.com/chronoswap',
       },
       {
         label: 'Docs',

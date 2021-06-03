@@ -8,7 +8,6 @@ import ChronostoneCard from 'views/Home/components/ChronostoneCard'
 import CakeStats from 'views/Home/components/CakeStats'
 import TotalValueLockedCard from 'views/Home/components/TotalValueLockedCard'
 import EarnAPYCard from 'views/Home/components/EarnAPYCard'
-import LeadInBanner from 'views/TradingCompetition/components/LeadInBanner'
 
 const Hero = styled.div`
   align-items: center;
@@ -60,11 +59,10 @@ const Home: React.FC = () => {
 
   return (
     <>
-      <LeadInBanner />
       <Page>
         <Hero>
           <Heading as="h1" scale="xl" mb="24px" color="secondary">
-            {TranslateString(576, 'OneThousandSwaps')}
+            {TranslateString(576, 'Chronoswap')}
           </Heading>
           <Text>{TranslateString(578, 'Your AMM and yield farm on Binance Smart Chain.')}</Text>
         </Hero>

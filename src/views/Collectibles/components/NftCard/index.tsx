@@ -14,7 +14,6 @@ import {
   CardFooter,
   useModal,
 } from '@onekswaps/uikit'
-import { useProfile } from 'state/hooks'
 import useI18n from 'hooks/useI18n'
 import { Nft } from 'config/constants/types'
 import InfoRow from '../InfoRow'
@@ -55,8 +54,7 @@ const InfoBlock = styled.div`
 const NftCard: React.FC<NftCardProps> = ({ nft, canClaim = false, tokenIds = [], onClaim, refresh }) => {
   const [isOpen, setIsOpen] = useState(false)
   const TranslateString = useI18n()
-  const { profile } = useProfile()
-  const { bunnyId, name, description } = nft
+  const { name, description } = nft
   const walletOwnsNft = tokenIds.length > 0
   const Icon = isOpen ? ChevronUpIcon : ChevronDownIcon
 
@@ -82,11 +80,6 @@ const NftCard: React.FC<NftCardProps> = ({ nft, canClaim = false, tokenIds = [],
           {walletOwnsNft && (
             <Tag outline variant="secondary">
               {TranslateString(728, 'In Wallet')}
-            </Tag>
-          )}
-          {profile?.nft?.bunnyId === bunnyId && (
-            <Tag outline variant="success">
-              {TranslateString(999, 'Profile Pic')}
             </Tag>
           )}
         </Header>

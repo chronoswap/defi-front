@@ -1,11 +1,9 @@
 import { useEffect, useMemo } from 'react'
 import BigNumber from 'bignumber.js'
 import { kebabCase } from 'lodash'
-import { useWeb3React } from '@web3-react/core'
 import { Toast, toastTypes } from '@onekswaps/uikit'
 import { useSelector } from 'react-redux'
 import { useAppDispatch } from 'state'
-import { Team } from 'config/constants/types'
 import { getWeb3NoAccount } from 'utils/web3'
 import useRefresh from 'hooks/useRefresh'
 import {
@@ -17,10 +15,7 @@ import {
   clear as clearToast,
   setBlock,
 } from './actions'
-import { State, Farm, Pool, ProfileState, TeamsState, AchievementState, PriceState } from './types'
-import { fetchProfile } from './profile'
-import { fetchTeam, fetchTeams } from './teams'
-import { fetchAchievements } from './achievements'
+import { State, Farm, Pool, PriceState } from './types'
 import { fetchPrices } from './prices'
 
 export const useFetchPublicData = () => {
@@ -116,64 +111,6 @@ export const useToast = () => {
   }, [dispatch])
 
   return helpers
-}
-
-// Profile
-
-export const useFetchProfile = () => {
-  const { account } = useWeb3React()
-  const dispatch = useAppDispatch()
-
-  useEffect(() => {
-    dispatch(fetchProfile(account))
-  }, [account, dispatch])
-}
-
-export const useProfile = () => {
-  const { isInitialized, isLoading, data, hasRegistered }: ProfileState = useSelector((state: State) => state.profile)
-  return { profile: data, hasProfile: isInitialized && hasRegistered, isInitialized, isLoading }
-}
-
-// Teams
-
-export const useTeam = (id: number) => {
-  const team: Team = useSelector((state: State) => state.teams.data[id])
-  const dispatch = useAppDispatch()
-
-  useEffect(() => {
-    dispatch(fetchTeam(id))
-  }, [id, dispatch])
-
-  return team
-}
-
-export const useTeams = () => {
-  const { isInitialized, isLoading, data }: TeamsState = useSelector((state: State) => state.teams)
-  const dispatch = useAppDispatch()
-
-  useEffect(() => {
-    dispatch(fetchTeams())
-  }, [dispatch])
-
-  return { teams: data, isInitialized, isLoading }
-}
-
-// Achievements
-
-export const useFetchAchievements = () => {
-  const { account } = useWeb3React()
-  const dispatch = useAppDispatch()
-
-  useEffect(() => {
-    if (account) {
-      dispatch(fetchAchievements(account))
-    }
-  }, [account, dispatch])
-}
-
-export const useAchievements = () => {
-  const achievements: AchievementState['data'] = useSelector((state: State) => state.achievements.data)
-  return achievements
 }
 
 // Prices

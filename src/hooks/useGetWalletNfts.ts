@@ -1,9 +1,7 @@
 import { useWeb3React } from '@web3-react/core'
 import { useEffect, useReducer, useState } from 'react'
 import { getPancakeRabbitContract, getChronostoneContract } from 'utils/contractHelpers'
-import makeBatchRequest from 'utils/makeBatchRequest'
 
-const pancakeRabbitsContract = getPancakeRabbitContract()
 const chronostoneContract = getChronostoneContract()
 
 export type NftMap = {
