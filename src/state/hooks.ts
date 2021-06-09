@@ -1,7 +1,7 @@
 import { useEffect, useMemo } from 'react'
 import BigNumber from 'bignumber.js'
 import { kebabCase } from 'lodash'
-import { Toast, toastTypes } from '@onekswaps/uikit'
+import { Toast, toastTypes } from '@chronoswap-packages/uikit'
 import { useSelector } from 'react-redux'
 import { useAppDispatch } from 'state'
 import { getWeb3NoAccount } from 'utils/web3'

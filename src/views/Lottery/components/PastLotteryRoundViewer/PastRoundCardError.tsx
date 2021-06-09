@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text } from '@onekswaps/uikit'
+import { Text } from '@chronoswap-packages/uikit'
 
 interface PastRoundCardErrorProps {
   error: {

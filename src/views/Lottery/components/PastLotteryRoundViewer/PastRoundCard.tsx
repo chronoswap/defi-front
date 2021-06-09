@@ -1,5 +1,5 @@
 import React from 'react'
-import { Card } from '@onekswaps/uikit'
+import { Card } from '@chronoswap-packages/uikit'
 import { DataResponse } from 'utils/getLotteryRoundData'
 import PastRoundCardError from './PastRoundCardError'
 import PastRoundCardDetails from './PastRoundCardDetails'

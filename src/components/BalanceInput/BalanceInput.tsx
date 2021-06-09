@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Button, Box, BoxProps, Flex, Input as UIKitInput, Text } from '@onekswaps/uikit'
+import { Button, Box, BoxProps, Flex, Input as UIKitInput, Text } from '@chronoswap-packages/uikit'
 import useI18n from 'hooks/useI18n'
 
 export interface BalanceInputProps extends BoxProps {

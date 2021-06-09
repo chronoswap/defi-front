@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react'
-import { Input } from '@onekswaps/uikit'
+import { Input } from '@chronoswap-packages/uikit'
 import styled from 'styled-components'
 
 const StyledInput = styled(Input)`

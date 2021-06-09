@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Button, Flex, Input, InputProps } from '@onekswaps/uikit'
+import { Button, Flex, Input, InputProps } from '@chronoswap-packages/uikit'
 import useI18n from 'hooks/useI18n'
 
 interface TokenInputProps extends InputProps {

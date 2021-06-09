@@ -1,7 +1,7 @@
 {
-  "short_name": "PancakeSwap",
-  "name": "PancakeSwap",
-  "description": "Farm CAKE with Pancake LP Tokens",
+  "short_name": "chronoswap",
+  "name": "Chrono Swap",
+  "description": "Farm ThoP and CHRON with Chronoswap LP Tokens",
   "icons": [
     {
       "src": "favicon.ico",

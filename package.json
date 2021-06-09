@@ -1,5 +1,5 @@
 {
-  "name": "chronoswap/defi-front",
+  "name": "chronoswap-defi-front",
   "version": "0.1.0",
   "private": true,
   "scripts": {
@@ -33,9 +33,9 @@
   },
   "dependencies": {
     "@binance-chain/bsc-connector": "^1.0.0",
+    "@chronoswap-packages/uikit": "^1.0.6",
     "@crowdin/crowdin-api-client": "^1.10.4",
     "@ethersproject/abi": "^5.0.7",
-    "@onekswaps/uikit": "^1.1.0",
     "@pancakeswap-libs/uikit": "^0.28.0",
     "@reduxjs/toolkit": "^1.5.0",
     "@types/react": "^17.0.2",
@@ -72,9 +72,9 @@
   },
   "devDependencies": {
     "@babel/core": "^7.14.3",
+    "@chronoswap-packages/eslint-config-chrono": "^1.0.1",
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-conventional": "^11.0.0",
-    "@onekswaps/eslint-config-onethousand": "^1.0.2",
     "@pancakeswap-libs/eslint-config-pancake": "1.0.0",
     "@types/jest": "^26.0.19",
     "@types/react-redux": "^7.1.16",

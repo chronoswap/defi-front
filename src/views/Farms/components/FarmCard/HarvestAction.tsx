@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import BigNumber from 'bignumber.js'
-import { Button, Flex, Heading } from '@onekswaps/uikit'
+import { Button, Flex, Heading } from '@chronoswap-packages/uikit'
 import useI18n from 'hooks/useI18n'
 import { useHarvest } from 'hooks/useHarvest'
 import { usePriceCakeBusd } from 'state/hooks'

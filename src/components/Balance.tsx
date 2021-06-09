@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import CountUp from 'react-countup'
-import { Text } from '@onekswaps/uikit'
+import { Text } from '@chronoswap-packages/uikit'
 
 interface TextProps {
   isDisabled?: boolean

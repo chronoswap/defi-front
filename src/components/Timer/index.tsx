@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Flex, Heading, Text } from '@onekswaps/uikit'
+import { Flex, Heading, Text } from '@chronoswap-packages/uikit'
 import TimerTooltip from './TimerTooltip'
 
 export interface TimerProps {

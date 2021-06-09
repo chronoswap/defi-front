@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react'
 import styled from 'styled-components'
-import { Heading, Card, CardBody, Button, useModal } from '@onekswaps/uikit'
+import { Heading, Card, CardBody, Button, useModal } from '@chronoswap-packages/uikit'
 import { useWeb3React } from '@web3-react/core'
 import { getCakeAddress } from 'utils/addressHelpers'
 import { getBalanceNumber } from 'utils/formatBalance'

@@ -1,4 +1,4 @@
-import { Toast } from '@onekswaps/uikit'
+import { Toast } from '@chronoswap-packages/uikit'
 import BigNumber from 'bignumber.js'
 import { CampaignType, FarmConfig, Nft, PoolConfig, Team } from 'config/constants/types'
 

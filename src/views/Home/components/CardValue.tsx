@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import { useCountUp } from 'react-countup'
-import { Text } from '@onekswaps/uikit'
+import { Text } from '@chronoswap-packages/uikit'
 
 export interface CardValueProps {
   value: number

@@ -1,5 +1,5 @@
 import React from 'react'
-import { Heading, Text } from '@onekswaps/uikit'
+import { Heading, Text } from '@chronoswap-packages/uikit'
 import useI18n from 'hooks/useI18n'
 import SecondaryCard from './SecondaryCard'
 import CardContent from './CardContent'

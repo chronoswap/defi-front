@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Text, Link } from '@onekswaps/uikit'
+import { Text, Link } from '@chronoswap-packages/uikit'
 import Tooltip from 'views/Farms/components/Tooltip/Tooltip'
 
 const StyledTooltip = styled(Tooltip)`

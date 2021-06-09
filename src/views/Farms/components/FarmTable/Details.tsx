@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { ChevronDownIcon, useMatchBreakpoints } from '@onekswaps/uikit'
+import { ChevronDownIcon, useMatchBreakpoints } from '@chronoswap-packages/uikit'
 import useI18n from 'hooks/useI18n'
 
 interface DetailsProps {

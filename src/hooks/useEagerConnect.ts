@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { connectorLocalStorageKey, ConnectorNames } from '@onekswaps/uikit'
+import { connectorLocalStorageKey, ConnectorNames } from '@chronoswap-packages/uikit'
 import useAuth from 'hooks/useAuth'
 
 const _binanceChainListener = async () =>

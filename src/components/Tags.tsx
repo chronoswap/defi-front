@@ -1,5 +1,5 @@
 import React from 'react'
-import { Tag, VerifiedIcon, CommunityIcon, BinanceIcon } from '@onekswaps/uikit'
+import { Tag, VerifiedIcon, CommunityIcon, BinanceIcon } from '@chronoswap-packages/uikit'
 
 const CoreTag = (props) => (
   <Tag variant="secondary" outline startIcon={<VerifiedIcon color="secondary" />} {...props}>

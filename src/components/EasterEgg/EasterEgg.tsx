@@ -1,5 +1,5 @@
 import React, { useState, useCallback } from 'react'
-import { FallingBunnies, FallingBunniesProps, useKonamiCheatCode } from '@onekswaps/uikit'
+import { FallingBunnies, FallingBunniesProps, useKonamiCheatCode } from '@chronoswap-packages/uikit'
 
 const EasterEgg: React.FC<FallingBunniesProps> = (props) => {
   const [show, setShow] = useState(false)

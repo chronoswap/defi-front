@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import { useRouteMatch, Link } from 'react-router-dom'
-import { ButtonMenu, ButtonMenuItem, Toggle, Text } from '@onekswaps/uikit'
+import { ButtonMenu, ButtonMenuItem, Toggle, Text } from '@chronoswap-packages/uikit'
 import useI18n from 'hooks/useI18n'
 
 const PoolTabButtons = ({ stakedOnly, setStakedOnly }) => {

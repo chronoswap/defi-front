@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import useI18n from 'hooks/useI18n'
-import { Heading, Text } from '@onekswaps/uikit'
+import { Heading, Text } from '@chronoswap-packages/uikit'
 import { BigNumber } from 'bignumber.js'
 import { usePriceCakeBusd } from 'state/hooks'
 import CardBusdValue from '../../Home/components/CardBusdValue'

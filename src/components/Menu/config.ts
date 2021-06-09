@@ -1,4 +1,4 @@
-import { MenuEntry, menuStatus } from '@onekswaps/uikit'
+import { MenuEntry, menuStatus } from '@chronoswap-packages/uikit'
 
 const config: MenuEntry[] = [
   {

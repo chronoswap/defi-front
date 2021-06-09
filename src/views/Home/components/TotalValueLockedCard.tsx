@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Card, CardBody, Heading, Skeleton, Text } from '@onekswaps/uikit'
+import { Card, CardBody, Heading, Skeleton, Text } from '@chronoswap-packages/uikit'
 import useI18n from 'hooks/useI18n'
 import useGetStats from 'hooks/useGetTvl'
 import CardValue from './CardValue'
