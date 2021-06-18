@@ -7,7 +7,7 @@ import { getAddress, getMasterChefAddress } from 'utils/addressHelpers'
 import useRefresh from './useRefresh'
 
 const useFarmStakedPrice = (pid, farmLiquidity) => {
-  const [farmStakedPrice, setFarmStakedPrice] = useState(0.0)
+  const [farmStakedPrice, setFarmStakedPrice] = useState({farmStakedPrice: 0.0, farmLpPrice: 0.0})
   const { account } = useWeb3React()
   const { fastRefresh } = useRefresh()
   const farm = useFarmFromPid(pid)
@@ -17,10 +17,10 @@ const useFarmStakedPrice = (pid, farmLiquidity) => {
     const fetchStaked = async () => {
       const rawlpSupply = await lpContract.methods.balanceOf(getMasterChefAddress()).call()
       const lpSupply = new BigNumber(rawlpSupply).div(10**farm.token.decimals)
-      const lpPrice = farmLiquidity.div(lpSupply)
-      const stakedBalance = new BigNumber(farm.userData.stakedBalance).div(10**farm.token.decimals)
+      const lpPrice = farmLiquidity?farmLiquidity.div(lpSupply):new BigNumber(0)
+      const stakedBalance = new BigNumber(farm.userData?farm.userData.stakedBalance:0).div(10**farm.token.decimals)
       const stakedBalancePrice = stakedBalance.times(lpPrice)
-      setFarmStakedPrice(stakedBalancePrice.toNumber())
+      setFarmStakedPrice({farmStakedPrice: stakedBalancePrice.toNumber(), farmLpPrice: lpPrice.toNumber()})
     }
 
     if (account) {

@@ -6,6 +6,7 @@ import { communityFarms } from 'config/constants'
 import { Farm } from 'state/types'
 import { provider as ProviderType } from 'web3-core'
 import useI18n from 'hooks/useI18n'
+import useFarmStakedPrice from 'hooks/useFarmStakedPrice'
 import ExpandableSectionButton from 'components/ExpandableSectionButton'
 import { BASE_ADD_LIQUIDITY_URL } from 'config'
 import getLiquidityUrlPathParts from 'utils/getLiquidityUrlPathParts'
@@ -114,9 +115,13 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, account }
   })
   const addLiquidityUrl = `${BASE_ADD_LIQUIDITY_URL}/${liquidityUrlPathParts}`
   const lpAddress = farm.lpAddresses[process.env.REACT_APP_CHAIN_ID]
+  const farmStakedPrice = useFarmStakedPrice(farm.pid, farm.liquidity)
+  const lpPriceFormatted = farmStakedPrice.farmLpPrice
+    ? `$${farmStakedPrice.farmLpPrice.toLocaleString(undefined, { maximumFractionDigits: 2 })}`
+    : '-'
   return (
     <FCard>
-      {farm.token.symbol === 'ONEK' && <StyledCardAccent />}
+      {farm.token.symbol === 'ThoP' && <StyledCardAccent />}
       <CardHeading
         lpLabel={lpLabel}
         multiplier={farm.multiplier}
@@ -157,7 +162,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, account }
           totalValueFormatted={totalValueFormatted}
           lpLabel={lpLabel}
           addLiquidityUrl={addLiquidityUrl}
-          lpValue = {0}  // TODO terminar el valor
+          lpValue = {lpPriceFormatted}
         />
       </ExpandingWrapper>
     </FCard>

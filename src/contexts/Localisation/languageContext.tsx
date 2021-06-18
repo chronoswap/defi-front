@@ -62,7 +62,6 @@ const LanguageContextProvider = ({ children }) => {
       // fetchTranslationsForSelectedLanguage(selectedLanguage)
         .then((translationApiResponse) => {
           if (translationApiResponse.data.length < 1) {
-            console.log(translationApiResponse)
             setTranslations([])
           } else {
             setTranslations(translationApiResponse.data)

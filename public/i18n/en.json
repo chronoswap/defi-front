@@ -75,7 +75,7 @@
     {
       "data": {
         "stringId": 304,
-        "text": "Total ONEK burned since launch"
+        "text": "Total ThoP burned since launch"
       }
     },
     {
@@ -123,13 +123,13 @@
     {
       "data": {
         "stringId": 320,
-        "text": "Stake LP tokens to earn ONEK"
+        "text": "Stake LP tokens to earn ThoP"
       }
     },
     {
       "data": {
         "stringId": 322,
-        "text": "Stake ONEK, get Pepper."
+        "text": "Stake ThoP, get Pepper."
       }
     },
     {
@@ -153,7 +153,7 @@
     {
       "data": {
         "stringId": 334,
-        "text": "Every time you stake and unstake ONEK tokens, the contract will automatically harvest ONEK rewards for you!"
+        "text": "Every time you stake and unstake ThoP tokens, the contract will automatically harvest ThoP rewards for you!"
       }
     },
     {
@@ -225,7 +225,7 @@
     {
       "data": {
         "stringId": 358,
-        "text": "ONEK price"
+        "text": "ThoP price"
       }
     },
     {
@@ -249,7 +249,7 @@
     {
       "data": {
         "stringId": 380,
-        "text": "1 ONEK = 1 PEPPER"
+        "text": "1 ThoP = 1 PEPPER"
       }
     },
     {
@@ -297,7 +297,7 @@
     {
       "data": {
         "stringId": 400,
-        "text": "PEPPER holders proportionally split 25% of ONEK block emissions each day (10 ONEK per block), Rewards are distributed each block."
+        "text": "PEPPER holders proportionally split 25% of ThoP block emissions each day (10 ThoP per block), Rewards are distributed each block."
       }
     },
     {
@@ -339,7 +339,7 @@
     {
       "data": {
         "stringId": 414,
-        "text": "Your Onekswapy Project"
+        "text": "Your Chronoswapy Project"
       }
     },
     {
@@ -363,13 +363,13 @@
     {
       "data": {
         "stringId": 424,
-        "text": "%num% ONEK"
+        "text": "%num% ThoP"
       }
     },
     {
       "data": {
         "stringId": 426,
-        "text": "Spend ONEK to buy tickets, contributing to the lottery pot. Ticket purchases end approx. 30 minutes before lottery. Win prizes if 2, 3, or 4 of your ticket numbers match the winning numbers and their positions! Good luck!"
+        "text": "Spend ThoP to buy tickets, contributing to the lottery pot. Ticket purchases end approx. 30 minutes before lottery. Win prizes if 2, 3, or 4 of your ticket numbers match the winning numbers and their positions! Good luck!"
       }
     },
     {
@@ -411,19 +411,19 @@
     {
       "data": {
         "stringId": 442,
-        "text": "Onekswapy tickets matching 4 numbers:"
+        "text": "Chronoswapy tickets matching 4 numbers:"
       }
     },
     {
       "data": {
         "stringId": 444,
-        "text": "Onekswapy tickets matching 3 numbers:"
+        "text": "Chronoswapy tickets matching 3 numbers:"
       }
     },
     {
       "data": {
         "stringId": 446,
-        "text": "Onekswapy tickets matching 2 numbers:"
+        "text": "Chronoswapy tickets matching 2 numbers:"
       }
     },
     {
@@ -447,13 +447,13 @@
     {
       "data": {
         "stringId": 456,
-        "text": "Your amount must be a multiple of 1 ONEK"
+        "text": "Your amount must be a multiple of 1 ThoP"
       }
     },
     {
       "data": {
         "stringId": 458,
-        "text": "1 Ticket = 1 ONEK"
+        "text": "1 Ticket = 1 ThoP"
       }
     },
     {
@@ -501,7 +501,7 @@
     {
       "data": {
         "stringId": 478,
-        "text": "Ticket purchases are final. Your ONEK cannot be returned to you after buying tickets."
+        "text": "Ticket purchases are final. Your ThoP cannot be returned to you after buying tickets."
       }
     },
     {
@@ -513,7 +513,7 @@
     {
       "data": {
         "stringId": 482,
-        "text": "ONEK prizes to be claimed"
+        "text": "ThoP prizes to be claimed"
       }
     },
     {
@@ -549,13 +549,13 @@
     {
       "data": {
         "stringId": 494,
-        "text": "Approve ONEK"
+        "text": "Approve ThoP"
       }
     },
     {
       "data": {
         "stringId": 496,
-        "text": "SYRUP holders proportionally split 40% of ONEK block emissions each day (10 ONEK per block), Rewards are distributed each block."
+        "text": "SYRUP holders proportionally split 40% of ThoP block emissions each day (10 ThoP per block), Rewards are distributed each block."
       }
     },
     {
@@ -573,19 +573,19 @@
     {
       "data": {
         "stringId": 504,
-        "text": "You\u2019ll pay for the new tokens using ONEK-BNB LP tokens, which means you need to stake equal amounts of ONEK and BNB in a liquidity pool to take part."
+        "text": "You\u2019ll pay for the new tokens using ThoP-BNB LP tokens, which means you need to stake equal amounts of ThoP and BNB in a liquidity pool to take part."
       }
     },
     {
       "data": {
         "stringId": 506,
-        "text": "Get ONEK-BNB LP >"
+        "text": "Get ThoP-BNB LP >"
       }
     },
     {
       "data": {
         "stringId": 508,
-        "text": "The project gets the BNB, Onekswap burns the ONEK."
+        "text": "The project gets the BNB, Chronoswap burns the ThoP."
       }
     },
     {
@@ -603,7 +603,7 @@
     {
       "data": {
         "stringId": 514,
-        "text": "Launch your project with Onekswap, Binance Smart Chain\u2019s most-used AMM project and liquidity provider, to bring your token directly to the most active and rapidly growing community on BSC."
+        "text": "Launch your project with Chronoswap, Binance Smart Chain\u2019s most-used AMM project and liquidity provider, to bring your token directly to the most active and rapidly growing community on BSC."
       }
     },
     {
@@ -657,19 +657,19 @@
     {
       "data": {
         "stringId": 536,
-        "text": "Total ONEK Supply"
+        "text": "Total ThoP Supply"
       }
     },
     {
       "data": {
         "stringId": 538,
-        "text": "Total ONEK Burned"
+        "text": "Total ThoP Burned"
       }
     },
     {
       "data": {
         "stringId": 540,
-        "text": "New ONEK per block"
+        "text": "New ThoP per block"
       }
     },
     {
@@ -681,19 +681,19 @@
     {
       "data": {
         "stringId": 544,
-        "text": "ONEK to Harvest"
+        "text": "ThoP to Harvest"
       }
     },
     {
       "data": {
         "stringId": 546,
-        "text": "ONEK in Wallet"
+        "text": "ThoP in Wallet"
       }
     },
     {
       "data": {
         "stringId": 548,
-        "text": "Collecting ONEK"
+        "text": "Collecting ThoP"
       }
     },
     {
@@ -705,7 +705,7 @@
     {
       "data": {
         "stringId": 552,
-        "text": "ONEK to Collect"
+        "text": "ThoP to Collect"
       }
     },
     {
@@ -771,13 +771,13 @@
     {
       "data": {
         "stringId": 578,
-        "text": "The deflationary yield farm on Binance Smart Chain"
+        "text": "The deflationary yield farm on Binance Smart Chain, baby"
       }
     },
     {
       "data": {
         "stringId": 580,
-        "text": "Stake $ONEK to earn new tokens."
+        "text": "Stake $ThoP to earn new tokens."
       }
     },
     {
@@ -795,7 +795,7 @@
     {
       "data": {
         "stringId": 586,
-        "text": "ONEK to burn (USD)"
+        "text": "ThoP to burn (USD)"
       }
     },
     {
@@ -807,7 +807,7 @@
     {
       "data": {
         "stringId": 590,
-        "text": "\u2b50\ufe0f Every time you stake and unstake LP tokens, the contract will automatically harvest ONEK rewarONEKs for you!"
+        "text": "\u2b50\ufe0f Every time you stake and unstake LP tokens, the contract will automatically harvest ThoP rewards for you!"
       }
     },
     {
@@ -825,13 +825,13 @@
     {
       "data": {
         "stringId": 596,
-        "text": "Buy ONEK and BNB tokens"
+        "text": "Buy ThoP and BNB tokens"
       }
     },
     {
       "data": {
         "stringId": 598,
-        "text": "Get ONEK-BNB LP tokens by adding ONEK and BNB liquidity"
+        "text": "Get ThoP-BNB LP tokens by adding ThoP and BNB liquidity"
       }
     },
     {
@@ -843,7 +843,7 @@
     {
       "data": {
         "stringId": 602,
-        "text": "While the sale is live, commit your ONEK-LP tokens to buy the IFO tokens"
+        "text": "While the sale is live, commit your ThoP-LP tokens to buy the IFO tokens"
       }
     },
     {
@@ -879,7 +879,7 @@
     {
       "data": {
         "stringId": 614,
-        "text": "Trade in for ONEK, or keep for your collection!"
+        "text": "Trade in for ThoP, or keep for your collection!"
       }
     },
     {
@@ -921,7 +921,7 @@
     {
       "data": {
         "stringId": 628,
-        "text": "When you trade in this NFT to receive ONEK, you will lose access to it forever!"
+        "text": "When you trade in this NFT to receive ThoP, you will lose access to it forever!"
       }
     },
     {
@@ -951,7 +951,7 @@
     {
       "data": {
         "stringId": 638,
-        "text": "Winners can trade in their NFTs for a ONEK value until the expiry date written below. If you don't trade in your NFT by then, don\u2019t worry: you\u2019ll still keep it in your wallet!"
+        "text": "Winners can trade in their NFTs for a ThoP value until the expiry date written below. If you don't trade in your NFT by then, don\u2019t worry: you\u2019ll still keep it in your wallet!"
       }
     },
     {
@@ -993,7 +993,7 @@
     {
       "data": {
         "stringId": 654,
-        "text": "Trade in for ONEK"
+        "text": "Trade in for ThoP"
       }
     },
     {
@@ -1119,7 +1119,7 @@
     {
       "data": {
         "stringId": 696,
-        "text": "Stake LP tokens to earn ONEK"
+        "text": "Stake LP tokens to earn ThoP"
       }
     },
     {
@@ -1155,13 +1155,13 @@
     {
       "data": {
         "stringId": 708,
-        "text": "The ONEK Lottery"
+        "text": "The ThoP Lottery"
       }
     },
     {
       "data": {
         "stringId": 710,
-        "text": "Buy tickets with ONEK"
+        "text": "Buy tickets with ThoP"
       }
     },
     {
@@ -1215,7 +1215,7 @@
     {
       "data": {
         "stringId": 10000,
-        "text": "The deposit fee will be used to buyback ONEK"
+        "text": "The deposit fee will be used to buyback ThoP"
       }
     },
     {
@@ -1227,7 +1227,7 @@
     {
       "data": {
         "stringId": 10002,
-        "text": "Stake tokens to earn ONEK"
+        "text": "Stake tokens to earn ThoP"
       }
     },
     {
@@ -1239,7 +1239,7 @@
     {
       "data": {
         "stringId": 10004,
-        "text": "Onekswaps Finance"
+        "text": "Chronoswap Finance"
       }
     },
     {

@@ -12,11 +12,11 @@ const config: MenuEntry[] = [
     items: [
       {
         label: 'Exchange',
-        href: 'http://3.143.210.104',
+        href: 'https://exchange.pancakeswap.finance',
       },
       {
         label: 'Liquidity',
-        href: 'http://3.143.210.104/#/pool',
+        href: 'https://exchange.pancakeswap.finance/#/pool',
       },
     ],
   },
@@ -78,8 +78,7 @@ const config: MenuEntry[] = [
       },
       {
         label: 'Docs',
-        href: 'https://docs.pancakeswap.finance',
-        status: menuStatus.SOON,
+        href: 'https://info.chronoswap.finance',
       },
       {
         label: 'Blog',

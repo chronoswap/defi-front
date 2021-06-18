@@ -10,7 +10,7 @@ export interface ExpandableSectionProps {
   totalValueFormatted?: string
   lpLabel?: string
   addLiquidityUrl?: string
-  lpValue?: number
+  lpValue?: string
 }
 
 const Wrapper = styled.div`

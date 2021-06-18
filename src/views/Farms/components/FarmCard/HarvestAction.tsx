@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import styled from 'styled-components'
 import BigNumber from 'bignumber.js'
 import { Button, Flex, Heading } from '@chronoswap-packages/uikit'
 import useI18n from 'hooks/useI18n'
@@ -13,6 +14,9 @@ interface FarmCardActionsProps {
   pid?: number
 }
 
+const HeadingLeft = styled(Heading)`
+  text-align: left;
+`
 const HarvestAction: React.FC<FarmCardActionsProps> = ({ earnings, pid }) => {
   const { account } = useWeb3React()
   const TranslateString = useI18n()
@@ -26,10 +30,10 @@ const HarvestAction: React.FC<FarmCardActionsProps> = ({ earnings, pid }) => {
 
   return (
     <Flex mb="8px" justifyContent="space-between" alignItems="center">
-      <Heading color={rawEarningsBalance === 0 ? 'textDisabled' : 'text'}>
+      <HeadingLeft color={rawEarningsBalance === 0 ? 'textDisabled' : 'text'}>
         {displayBalance}
         <CardBusdValue value={earningsUsd}/>
-      </Heading>
+      </HeadingLeft>
       <Button
         disabled={rawEarningsBalance === 0 || pendingTx}
         onClick={async () => {

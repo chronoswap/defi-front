@@ -1,6 +1,6 @@
 export default {
   masterChef: {
-    97: '0x1d32c2945C8FDCBc7156c553B7cEa4325a17f4f9',
+    97: '0x29C90d224aeB34541019d6e048CCed8939e3551E',
     56: '0x73feaa1eE314F8c655E354234017bE2193C9E24E',
     1337: '0x8f6DC524242A26399d81CAFF101db95C9d0232D8',
   },
@@ -18,7 +18,7 @@ export default {
   },
   mulltiCall: {
     56: '0x1ee38d535d541c55c9dae27b12edf090c608e6fb',
-    97: '0x67ADCB4dF3931b0C5Da724058ADC2174a9844412',
+    97: '0x86FA242Cf690B6a16EFe1670eB4dddFF4f28CC5B',
     1337: '0xc34175A79ACca40392bECD22ff10fAeBFE780Ae7',
   },
   pancakeProfile: {
@@ -57,5 +57,17 @@ export default {
   easterNft: {
     56: '0x23c41D28A239dDCAABd1bb1deF8d057189510066',
     97: '0x24ec6962dbe874F6B67B5C50857565667fA0854F',
+  },
+  chronoDev: {
+    97: '0x75103A1E4a78769Cf7c9C85F454786096Fa574Fb',
+    56: '',
+  },
+  blackHole: {
+    97: '0xA616F12cDD772c6a5E59eD5c545601cd613fA6a0',
+    56: '',
+  },
+  timelock: {
+    97: '0xd9cB3467c2b06E6439a2F390597010878A3e04FB',
+    56: '',
   },
 }

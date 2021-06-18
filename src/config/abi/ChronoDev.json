@@ -1,0 +1,345 @@
+[
+  {
+    "inputs": [
+      {
+        "internalType": "address[]",
+        "name": "_owners",
+        "type": "address[]"
+      },
+      {
+        "internalType": "address",
+        "name": "_contracts",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_partnership",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_marketing",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_treasury",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_charity",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_treasuryBNB",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_other",
+        "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_thop",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": true,
+        "internalType": "address",
+        "name": "target",
+        "type": "address"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "value",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "string",
+        "name": "signature",
+        "type": "string"
+      },
+      {
+        "indexed": false,
+        "internalType": "bytes",
+        "name": "data",
+        "type": "bytes"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "eta",
+        "type": "uint256"
+      }
+    ],
+    "name": "ExecuteTransaction",
+    "type": "event"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "destinations",
+    "outputs": [
+      {
+        "internalType": "string",
+        "name": "name",
+        "type": "string"
+      },
+      {
+        "internalType": "address",
+        "name": "addr",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "rate",
+        "type": "uint256"
+      },
+      {
+        "internalType": "bool",
+        "name": "isFixed",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "name": "owners",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "name": "tokens",
+    "outputs": [
+      {
+        "internalType": "contract BEP20",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "_newOwner",
+        "type": "address"
+      },
+      {
+        "internalType": "bool",
+        "name": "benefitiary",
+        "type": "bool"
+      }
+    ],
+    "name": "addOwner",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "string",
+        "name": "_name",
+        "type": "string"
+      },
+      {
+        "internalType": "address",
+        "name": "_addr",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_rate",
+        "type": "uint256"
+      }
+    ],
+    "name": "addDestination",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "uint256",
+        "name": "_id",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "_name",
+        "type": "string"
+      },
+      {
+        "internalType": "address",
+        "name": "_addr",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "_rate",
+        "type": "uint256"
+      }
+    ],
+    "name": "setDestination",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "payDay",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "tokenAddr",
+        "type": "address"
+      },
+      {
+        "internalType": "string",
+        "name": "symbol",
+        "type": "string"
+      }
+    ],
+    "name": "addToken",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
+      {
+        "internalType": "address",
+        "name": "target",
+        "type": "address"
+      },
+      {
+        "internalType": "uint256",
+        "name": "value",
+        "type": "uint256"
+      },
+      {
+        "internalType": "string",
+        "name": "signature",
+        "type": "string"
+      },
+      {
+        "internalType": "bytes",
+        "name": "data",
+        "type": "bytes"
+      },
+      {
+        "internalType": "uint256",
+        "name": "eta",
+        "type": "uint256"
+      }
+    ],
+    "name": "executeTransaction",
+    "outputs": [
+      {
+        "internalType": "bytes",
+        "name": "",
+        "type": "bytes"
+      }
+    ],
+    "stateMutability": "payable",
+    "type": "function",
+    "payable": true
+  },
+  {
+    "inputs": [],
+    "name": "getDestinations",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true
+  },
+  {
+    "inputs": [],
+    "name": "getLastPayday",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true
+  }
+]

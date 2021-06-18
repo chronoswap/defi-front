@@ -8,12 +8,33 @@ import useRefresh from 'hooks/useRefresh'
 import BigNumber from 'bignumber.js'
 import { useFarms, usePriceCakeBusd, useGetApiPrices } from 'state/hooks'
 
+const getFarmPricesJson = (farmsLP, prices, cakePriceBusd) => {
+  const result = []
+  farmsLP.forEach(element => {
+    let quotePrice = new BigNumber(0).toNumber();
+    let tokenPrice = new BigNumber(0).toNumber();
+    if (prices) {
+      quotePrice = prices[getAddress(element.quoteToken.address)] ? new BigNumber(prices[getAddress(element.quoteToken.address, true)]).toNumber() : new BigNumber(prices[getAddress(element.quoteToken.address, true)]).toNumber();
+      tokenPrice = element.token === tokens.cake ? cakePriceBusd.toNumber() : new BigNumber(prices[getAddress(element.token.address, true)]).toNumber();
+    }
+    const quoteTotalPrice = element.quoteTokenAmount ? new BigNumber(element.quoteTokenAmount).times(quotePrice).toNumber() : 0
+    const tokenTotalPrice = element.tokenAmount ? new BigNumber(element.tokenAmount).times(tokenPrice).toNumber() : 0
+    result.push(Number.isNaN(quoteTotalPrice + tokenTotalPrice) ? 0 : (quoteTotalPrice + tokenTotalPrice));
+  });
+  return result
+}
+
 const useGetStats = () => {
   const [balances, setBalance] = useState({pools: 0.0, farms: 0.0})
-  const { fastRefresh } = useRefresh()
+  const { slowRefresh } = useRefresh()
   const prices = useGetApiPrices()
   const cakePriceBusd = usePriceCakeBusd()
   const farmsLP = useFarms()
+
+  const farmsPrice = getFarmPricesJson(farmsLP, prices, cakePriceBusd)
+  const tokenBalanceFarmSum = farmsPrice.reduce((accum, earning) => {
+    return accum + earning
+  }, 0)
 
   useEffect(() => {
     const fetchBalances = async () => {
@@ -26,28 +47,10 @@ const useGetStats = () => {
       const tokenBalancePoolSum = tokenBalancePool.reduce((accum, earning) => {
         return accum + new BigNumber(earning).div(new BigNumber(10).pow(18)).toNumber()
       }, 0)
-
-      const farmsPrice = []
-      let quotePrice
-      let tokenPrice
-      let quoteTotalPrice
-      let tokenTotalPrice
-      // TODO A checkear porque tengo una ñapa con la api de precios que habrá que quitar en mainnet
-      farmsLP.forEach(element => {
-        quotePrice = prices[getAddress(element.quoteToken.address)] ? new BigNumber(prices[getAddress(element.quoteToken.address)]).toNumber() : cakePriceBusd.toNumber()
-        tokenPrice = element.token === tokens.cake ? cakePriceBusd.toNumber() : new BigNumber(prices[getAddress(element.token.address)]).toNumber()
-        quoteTotalPrice = element.quoteTokenAmount ? new BigNumber(element.quoteTokenAmount).times(quotePrice).toNumber() : 0
-        tokenTotalPrice = element.tokenAmount ? new BigNumber(element.tokenAmount).times(tokenPrice).toNumber() : 0
-        farmsPrice.push(Number.isNaN(quoteTotalPrice + tokenTotalPrice) ? 0 : (quoteTotalPrice + tokenTotalPrice));
-      });
-
-      const tokenBalanceFarmSum = farmsPrice.reduce((accum, earning) => {
-        return accum + earning
-      }, 0)
       setBalance({pools: tokenBalancePoolSum, farms: tokenBalanceFarmSum})
     }
     fetchBalances()
-  }, [fastRefresh, prices, cakePriceBusd, farmsLP])
+  }, [slowRefresh, tokenBalanceFarmSum])
 
   const tvl = Math.round(new BigNumber(balances.pools).multipliedBy(cakePriceBusd).toNumber() * 100) / 100
   return tvl + balances.farms

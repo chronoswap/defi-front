@@ -138,8 +138,8 @@ export const useGetApiPrice = (token: string) => {
 
 export const usePriceCakeBusd = (): BigNumber => {
   const ZERO = new BigNumber(0)
-  const cakeBnbFarm = useFarmFromPid(2) // TODO definir las granjas que usaremos para el precio
-  const bnbBusdFarm = useFarmFromPid(1)
+  const cakeBnbFarm = useFarmFromPid(1) // TODO definir las granjas que usaremos para el precio
+  const bnbBusdFarm = useFarmFromPid(2)
 
   const bnbBusdPrice = bnbBusdFarm.tokenPriceVsQuote ? new BigNumber(1).div(bnbBusdFarm.tokenPriceVsQuote) : ZERO
   const cakeBusdPrice = cakeBnbFarm.tokenPriceVsQuote ? bnbBusdPrice.times(cakeBnbFarm.tokenPriceVsQuote) : ZERO

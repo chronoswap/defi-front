@@ -20,6 +20,10 @@ interface FarmCardActionsProps {
   addLiquidityUrl?: string
 }
 
+const HeadingLeft = styled(Heading)`
+  text-align: left;
+`
+
 const IconButtonWrapper = styled.div`
   display: flex;
   svg {
@@ -67,10 +71,10 @@ const StakeAction: React.FC<FarmCardActionsProps> = ({
 
   return (
     <Flex justifyContent="space-between" alignItems="center">
-      <Heading color={rawStakedBalance === 0 ? 'textDisabled' : 'text'}>
+      <HeadingLeft color={rawStakedBalance === 0 ? 'textDisabled' : 'text'}>
         {displayBalance}
-        <CardBusdValue value={farmStakedPrice}/>
-      </Heading>
+        <CardBusdValue value={farmStakedPrice.farmStakedPrice}/>
+      </HeadingLeft>
       {renderStakingButtons()}
     </Flex>
   )

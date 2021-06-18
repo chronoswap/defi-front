@@ -40,11 +40,11 @@ const CakeStats = () => {
         </Row>
         <Row>
           <Text fontSize="14px">{TranslateString(538, 'Total ThoP Burned')}</Text>
-          <CardValue fontSize="14px" decimals={0} value={burnedBalance} />
+          <CardValue fontSize="14px" decimals={3} value={burnedBalance} />
         </Row>
         <Row>
           <Text fontSize="14px">{TranslateString(540, 'New ThoP/block')}</Text>
-          <CardValue fontSize="14px" decimals={0} value={thoPPerBlock} />
+          <CardValue fontSize="14px" decimals={3} value={thoPPerBlock} />
         </Row>
       </CardBody>
     </StyledCakeStats>

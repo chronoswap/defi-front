@@ -1,4 +1,5 @@
 import React, { useEffect, useRef } from 'react'
+import styled from 'styled-components'
 import { useCountUp } from 'react-countup'
 import { Text } from '@chronoswap-packages/uikit'
 
@@ -11,6 +12,11 @@ export interface CardValueProps {
   bold?: boolean
   color?: string
 }
+
+const TextLeft = styled(Text)`
+  text-align: left;
+  margin-top: 5px;
+`
 
 const CardValue: React.FC<CardValueProps> = ({
   value,
@@ -38,10 +44,10 @@ const CardValue: React.FC<CardValueProps> = ({
   }, [value, updateValue])
 
   return (
-    <Text bold={bold} fontSize={fontSize} style={{ lineHeight }} color={color}>
+    <TextLeft bold={bold} fontSize={fontSize} style={{ lineHeight }} color={color}>
       {prefix}
       {countUp}
-    </Text>
+    </TextLeft>
   )
 }
 
