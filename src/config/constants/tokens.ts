@@ -50,6 +50,15 @@ const tokens = {
     decimals: 18,
     projectLink: 'https://chronoswap.finance/',
   },
+  eth: {
+    symbol: 'ETH',
+    address: {
+      56: '0x2170Ed0880ac9A755fd29B2688956BD959F933F8',
+      97: '0xd66c6b4f0be8ce5b39d52e0fd1344c389929b378',
+    },
+    decimals: 18,
+    projectLink: 'https://ethereum.org/en/',
+  },
 }
 
 export default tokens

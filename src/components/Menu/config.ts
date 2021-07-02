@@ -7,7 +7,7 @@ const config: MenuEntry[] = [
     href: '/',
   },
   {
-    label: 'Trade',
+    label: 'ThoP',
     icon: 'TradeIcon',
     items: [
       {
@@ -15,8 +15,22 @@ const config: MenuEntry[] = [
         href: 'https://exchange.pancakeswap.finance',
       },
       {
-        label: 'Liquidity',
-        href: 'https://exchange.pancakeswap.finance/#/pool',
+        label: 'Chart',
+        href: 'https://dex.guru/token/0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82-bsc',
+      },
+    ],
+  },
+  {
+    label: 'CHRO',
+    icon: 'TradeIcon',
+    items: [
+      {
+        label: 'Exchange',
+        href: 'https://exchange.pancakeswap.finance',
+      },
+      {
+        label: 'Chart',
+        href: 'https://dex.guru/token/0xe9e7cea3dedca5984780bafc599bd69add087d56-bsc',
       },
     ],
   },

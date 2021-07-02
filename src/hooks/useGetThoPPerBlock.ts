@@ -4,18 +4,18 @@ import BigNumber from 'bignumber.js'
 import useRefresh from './useRefresh'
 
 const useGetThoPPerBlock = () => {
-  const [thoPPerBlock, setthoPPerBlock] = useState(0)
+  const [thoPPerBlock, setthoPPerBlock] = useState(new BigNumber(0))
   const { slowRefresh } = useRefresh()
-  const masterChefContract = getMasterchefContract()
 
   useEffect(() => {
     const fetchThoPPerBlock = async () => {
+      const masterChefContract = getMasterchefContract()
       const rawThoPPerBlock = await masterChefContract.methods.cakePerBlock().call()
-      const _thoPPerBlock = new BigNumber(rawThoPPerBlock).div(10**18) // TODO No me gusta meter datos a piñone
-      setthoPPerBlock(_thoPPerBlock.toNumber())
+      const _thoPPerBlock = new BigNumber(rawThoPPerBlock)
+      setthoPPerBlock(_thoPPerBlock)
     }
     fetchThoPPerBlock()
-  }, [slowRefresh, masterChefContract])
+  }, [slowRefresh])
 
   return thoPPerBlock
 }

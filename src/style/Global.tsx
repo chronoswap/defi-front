@@ -13,6 +13,7 @@ const GlobalStyle = createGlobalStyle`
   }
   body {
     background-color: ${({ theme }) => theme.colors.background};
+    background-color: rgba(44,0,255,0.05);
 
     img {
       height: auto;

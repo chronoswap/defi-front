@@ -8,8 +8,20 @@
     },
     {
       "data": {
+        "stringId": 279,
+        "text": "Total value locked (TVL)"
+      }
+    },
+    {
+      "data": {
         "stringId": 280,
         "text": "Staking"
+      }
+    },
+    {
+      "data": {
+        "stringId": 281,
+        "text": "My total value"
       }
     },
     {
@@ -650,32 +662,68 @@
     },
     {
       "data": {
+        "stringId": 533,
+        "text": "ThoP Stats"
+      }
+    },
+    {
+      "data": {
         "stringId": 534,
-        "text": "Statistics"
+        "text": "CHRO Stats"
+      }
+    },
+    {
+      "data": {
+        "stringId": 535,
+        "text": "Market Cap"
       }
     },
     {
       "data": {
         "stringId": 536,
-        "text": "Total ThoP Supply"
+        "text": "Total Supply"
+      }
+    },
+    {
+      "data": {
+        "stringId": 537,
+        "text": "Circulating Supply"
       }
     },
     {
       "data": {
         "stringId": 538,
-        "text": "Total ThoP Burned"
+        "text": "Total Burned"
+      }
+    },
+    {
+      "data": {
+        "stringId": 539,
+        "text": "Value in farms"
       }
     },
     {
       "data": {
         "stringId": 540,
-        "text": "New ThoP per block"
+        "text": "New ThoP/block"
+      }
+    },
+    {
+      "data": {
+        "stringId": 541,
+        "text": "Value in pools"
       }
     },
     {
       "data": {
         "stringId": 542,
         "text": "Farms & Staking"
+      }
+    },
+    {
+      "data": {
+        "stringId": 543,
+        "text": "Value to harvest"
       }
     },
     {

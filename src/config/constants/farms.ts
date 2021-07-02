@@ -33,6 +33,16 @@ const farms: FarmConfig[] = [
     token: tokens.busd,
     quoteToken: tokens.wbnb,
   },
+  {
+    pid: 3,
+    lpSymbol: 'ThoP-ETH LP',
+    lpAddresses: {
+      97: '0x8349336c125a8bb73d6c1f41e22384bcfba8557b',
+      56: '',
+    },
+    token: tokens.cake,
+    quoteToken: tokens.eth,
+  },
 ]
 
 export default farms
