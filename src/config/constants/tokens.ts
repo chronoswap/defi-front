@@ -8,7 +8,7 @@ const tokens = {
     address: {
       56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
       1337: '0x646A336CD183dc947D3AdbEfb19c3cF637720318',
-      97: '0xB47622c5562a6e55D69538d5ba3CE1ecaFDCC6F3',
+      97: '0x50E22d39c3a93Fbd9800f9ee226D589d24664955',
     },
     decimals: 18,
     projectLink: 'https://chronoswap.finance/',
@@ -17,7 +17,7 @@ const tokens = {
     symbol: 'wBNB',
     address: {
       56: '0xbb4cdb9cbd36b01bd1cbaebf2de08d9173bc095c',
-      97: '0x094616F0BdFB0b526bD735Bf66Eca0Ad254ca81F',
+      97: '0x094616f0bdfb0b526bd735bf66eca0ad254ca81f',
     },
     decimals: 18,
     projectLink: 'https://www.binance.org/ ',
@@ -59,6 +59,35 @@ const tokens = {
     decimals: 18,
     projectLink: 'https://ethereum.org/en/',
   },
+  btcb: {
+    symbol: 'BTCB',
+    address: {
+      56: '0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c',
+      97: '0xE02dF9e3e622DeBdD69fb838bB799E3F168902c5',
+    },
+    decimals: 18,
+    projectLink: 'https://bitcoin.org/',
+  },
+  dai: {
+    symbol: 'DAI',
+    address: {
+      56: '0x1AF3F329e8BE154074D8769D1FFa4eE058B1DBc3',
+      97: '0xec5dcb5dbf4b114c9d0f65bccab49ec54f6a0867',
+    },
+    decimals: 18,
+    projectLink: 'https://www.makerdao.com/',
+  },
+  cake1: {
+    symbol: 'CAKE',
+    address: {
+      56: '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
+      97: '0xa35062141Fa33BCA92Ce69FeD37D0E8908868AAe',
+    },
+    decimals: 18,
+    projectLink: 'https://pancakeswap.finance/',
+  },
 }
+
+
 
 export default tokens

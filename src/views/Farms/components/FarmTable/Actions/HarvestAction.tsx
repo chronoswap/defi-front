@@ -6,7 +6,7 @@ import { FarmWithStakedValue } from 'views/Farms/components/FarmCard/FarmCard'
 import { getBalanceNumber } from 'utils/formatBalance'
 import { useHarvest } from 'hooks/useHarvest'
 import useI18n from 'hooks/useI18n'
-import { usePriceCakeBusd } from 'state/hooks'
+import { usePriceThopBusd } from 'state/hooks'
 import { useCountUp } from 'react-countup'
 
 import { ActionContainer, ActionTitles, Title, Subtle, ActionContent, Earned, Staked } from './styles'
@@ -14,7 +14,7 @@ import { ActionContainer, ActionTitles, Title, Subtle, ActionContent, Earned, St
 const HarvestAction: React.FunctionComponent<FarmWithStakedValue> = ({ pid, userData }) => {
   const { account } = useWeb3React()
   const earningsBigNumber = userData && account ? new BigNumber(userData.earnings) : null
-  const cakePrice = usePriceCakeBusd()
+  const cakePrice = usePriceThopBusd()
   let earnings = null
   let earningsBusd = 0
   let displayBalance = '?'

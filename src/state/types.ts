@@ -1,6 +1,6 @@
 import { Toast } from '@chronoswap-packages/uikit'
 import BigNumber from 'bignumber.js'
-import { CampaignType, FarmConfig, Nft, PoolConfig, Team } from 'config/constants/types'
+import { CampaignType, FarmConfig, StakingConfig, Nft, PoolConfig, Team } from 'config/constants/types'
 
 export type TranslatableText =
   | string
@@ -19,6 +19,20 @@ export interface Farm extends FarmConfig {
   lpTotalInQuoteToken?: BigNumber
   tokenPriceVsQuote?: BigNumber
   poolWeight?: BigNumber
+  depositFee?: BigNumber
+  userData?: {
+    allowance: BigNumber
+    tokenBalance: BigNumber
+    stakedBalance: BigNumber
+    earnings: BigNumber
+  }
+}
+
+export interface Staking extends StakingConfig {
+  stakingTokenAmount?: BigNumber
+  rewardTokenAmount?: BigNumber
+  poolWeight?: BigNumber
+  depositFee?: BigNumber
   userData?: {
     allowance: BigNumber
     tokenBalance: BigNumber
@@ -31,6 +45,7 @@ export interface Pool extends PoolConfig {
   totalStaked?: BigNumber
   startBlock?: number
   endBlock?: number
+  isAutoVault?: boolean
   userData?: {
     allowance: BigNumber
     stakingTokenBalance: BigNumber
@@ -62,8 +77,37 @@ export interface FarmsState {
   data: Farm[]
 }
 
+export interface VaultFees {
+  performanceFee: number
+  callFee: number
+  withdrawalFee: number
+  withdrawalFeePeriod: number
+}
+
+export interface VaultUser {
+  isLoading: boolean
+  userShares: string
+  thopAtLastUserAction: string
+  lastDepositedTime: string
+  lastUserActionTime: string
+}
+export interface ThopVault {
+  totalShares?: string
+  pricePerFullShare?: string
+  totalThopInVault?: string
+  estimatedThopBountyReward?: string
+  totalPendingThopHarvest?: string
+  fees?: VaultFees
+  userData?: VaultUser
+}
+
+export interface StakingsState {
+  data: Staking[]
+}
+
 export interface PoolsState {
   data: Pool[]
+  thopVault: ThopVault
 }
 
 export interface ProfileState {
@@ -146,10 +190,29 @@ export interface BlockState {
   initialBlock: number
 }
 
+export interface Nfts {
+  title: string
+  type: string
+  properties: {
+    name: string
+    decimals: number
+    description: string
+    image: string
+    properties: {
+      up: number
+      down: number
+      left: number
+      right: number
+      hash: number
+    }
+  }
+}
+
 // Global state
 
 export interface State {
   farms: FarmsState
+  stakings: StakingsState
   toasts: ToastsState
   prices: PriceState
   pools: PoolsState

@@ -56,3 +56,6 @@ export const getTradingCompetitionAddress = () => {
 export const getEasterNftAddress = () => {
   return getAddress(addresses.easterNft)
 }
+export const getThopVaultAddress = () => {
+  return getAddress(addresses.thopVault)
+}

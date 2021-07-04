@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import useI18n from 'hooks/useI18n'
 import { Heading, Text } from '@chronoswap-packages/uikit'
 import { BigNumber } from 'bignumber.js'
-import { usePriceCakeBusd } from 'state/hooks'
+import { usePriceThopBusd } from 'state/hooks'
 import CardBusdValue from '../../Home/components/CardBusdValue'
 
 export interface PrizeGridProps {
@@ -49,7 +49,7 @@ const PrizeGrid: React.FC<PrizeGridProps> = ({
   const twoMatchesAmount = +((lotteryPrizeAmount / 100) * 10).toFixed(0)
   const burnAmount = +((lotteryPrizeAmount / 100) * 20).toFixed(0)
   const TranslateString = useI18n()
-  const cakeBusdPrice = usePriceCakeBusd()
+  const cakeBusdPrice = usePriceThopBusd()
 
   const getCakeBusdValue = (amount: number) => {
     return new BigNumber(amount).multipliedBy(cakeBusdPrice).toNumber()

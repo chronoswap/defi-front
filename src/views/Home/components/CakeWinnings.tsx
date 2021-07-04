@@ -1,7 +1,7 @@
 import React from 'react'
 import { useTotalClaim } from 'hooks/useTickets'
 import { getBalanceNumber } from 'utils/formatBalance'
-import { usePriceCakeBusd } from 'state/hooks'
+import { usePriceThopBusd } from 'state/hooks'
 import { Text } from '@chronoswap-packages/uikit'
 import { useWeb3React } from '@web3-react/core'
 import { BigNumber } from 'bignumber.js'
@@ -19,7 +19,7 @@ const CakeWinnings = () => {
   const { account } = useWeb3React()
   const { claimAmount } = useTotalClaim()
   const cakeAmount = getBalanceNumber(claimAmount)
-  const cakePriceBusd = usePriceCakeBusd()
+  const cakePriceBusd = usePriceThopBusd()
   const claimAmountBusd = new BigNumber(cakeAmount).multipliedBy(cakePriceBusd).toNumber()
 
   if (!account) {

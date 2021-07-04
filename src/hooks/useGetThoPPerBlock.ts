@@ -10,7 +10,7 @@ const useGetThoPPerBlock = () => {
   useEffect(() => {
     const fetchThoPPerBlock = async () => {
       const masterChefContract = getMasterchefContract()
-      const rawThoPPerBlock = await masterChefContract.methods.cakePerBlock().call()
+      const rawThoPPerBlock = await masterChefContract.methods.getCurrentPerBlock().call()
       const _thoPPerBlock = new BigNumber(rawThoPPerBlock)
       setthoPPerBlock(_thoPPerBlock)
     }

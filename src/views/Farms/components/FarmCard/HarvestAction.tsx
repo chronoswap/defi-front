@@ -4,7 +4,7 @@ import BigNumber from 'bignumber.js'
 import { Button, Flex, Heading } from '@chronoswap-packages/uikit'
 import useI18n from 'hooks/useI18n'
 import { useHarvest } from 'hooks/useHarvest'
-import { usePriceCakeBusd } from 'state/hooks'
+import { usePriceThopBusd } from 'state/hooks'
 import { getBalanceNumber } from 'utils/formatBalance'
 import { useWeb3React } from '@web3-react/core'
 import CardBusdValue from '../../../Home/components/CardBusdValue'
@@ -23,7 +23,7 @@ const HarvestAction: React.FC<FarmCardActionsProps> = ({ earnings, pid }) => {
   const [pendingTx, setPendingTx] = useState(false)
   const { onReward } = useHarvest(pid)
 
-  const cakePrice = usePriceCakeBusd()
+  const cakePrice = usePriceThopBusd()
   const rawEarningsBalance = account ? getBalanceNumber(earnings) : 0
   const earningsUsd = cakePrice.times(rawEarningsBalance).toNumber()
   const displayBalance = rawEarningsBalance.toLocaleString()

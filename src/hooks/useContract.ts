@@ -11,6 +11,7 @@ import {
   getClaimRefundContract,
   getTradingCompetitionContract,
   getChronostoneContract,
+  getThopVaultContract
 } from 'utils/contractHelpers'
 
 /**
@@ -65,4 +66,9 @@ export const useTradingCompetitionContract = () => {
 export const useChronostoneContract = () => {
   const web3 = useWeb3()
   return useMemo(() => getChronostoneContract(web3), [web3])
+}
+
+export const useThopVaultContract = () => {
+  const web3 = useWeb3()
+  return useMemo(() => getThopVaultContract(web3), [web3])
 }

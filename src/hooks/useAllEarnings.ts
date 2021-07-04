@@ -3,7 +3,7 @@ import { useWeb3React } from '@web3-react/core'
 import multicall from 'utils/multicall'
 import { getMasterChefAddress } from 'utils/addressHelpers'
 import masterChefABI from 'config/abi/masterchef.json'
-import { farmsConfig } from 'config/constants'
+import { farmsConfig, stakingsConfig } from 'config/constants'
 import useRefresh from './useRefresh'
 
 const useAllEarnings = () => {
@@ -13,12 +13,17 @@ const useAllEarnings = () => {
 
   useEffect(() => {
     const fetchAllBalances = async () => {
-      const calls = farmsConfig.map((farm) => ({
+      const farmCalls = farmsConfig.map((farm) => ({
         address: getMasterChefAddress(),
-        name: 'pendingCake',
+        name: 'pendingToken',
         params: [farm.pid, account],
       }))
-      const res = await multicall(masterChefABI, calls)
+      const stakingCalls = stakingsConfig.map((staking) => ({
+        address: getMasterChefAddress(),
+        name: 'pendingToken',
+        params: [staking.pid, account],
+      }))
+      const res = await multicall(masterChefABI, [...farmCalls, ...stakingCalls])
 
       setBalance(res)
     }

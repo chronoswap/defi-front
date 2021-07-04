@@ -57,6 +57,14 @@ export interface FarmConfig {
   }
 }
 
+export interface StakingConfig {
+  pid: number
+  stakingToken: Token
+  rewardToken: Token
+  multiplier?: string
+  isCommunity?: boolean
+}
+
 export interface PoolConfig {
   sousId: number
   earningToken: Token
@@ -64,6 +72,7 @@ export interface PoolConfig {
   stakingLimit?: number
   contractAddress: Address
   poolCategory: PoolCategory
+  isAutoVault?: boolean
   tokenPerBlock: string
   sortOrder?: number
   harvest?: boolean

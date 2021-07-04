@@ -1,6 +1,6 @@
 export default {
   masterChef: {
-    97: '0x29C90d224aeB34541019d6e048CCed8939e3551E',
+    97: '0x66B25aD35ac9CE7487eEDec14A621c95e6D2eE8D',
     56: '0x73feaa1eE314F8c655E354234017bE2193C9E24E',
     1337: '0x8f6DC524242A26399d81CAFF101db95C9d0232D8',
   },
@@ -31,7 +31,7 @@ export default {
   },
   chronostone: {
     56: '',
-    97: '',
+    97: '0xAc0A662C95cEfCB9042D522A3DD9A24062F65F14',
     1337: '0xBe0B0f08A599F07699E98A9D001084e97b9a900A',
   },
   bunnyFactory: {
@@ -59,15 +59,19 @@ export default {
     97: '0x24ec6962dbe874F6B67B5C50857565667fA0854F',
   },
   chronoDev: {
-    97: '0x75103A1E4a78769Cf7c9C85F454786096Fa574Fb',
+    97: '0xE59D5b43005699623869eaa8315Edf57814e1b0C',
     56: '',
   },
   blackHole: {
-    97: '0xA616F12cDD772c6a5E59eD5c545601cd613fA6a0',
+    97: '0x6e32C54b7634D98D13953646bC9dc4adf4Dd2639',
     56: '',
   },
   timelock: {
-    97: '0xd9cB3467c2b06E6439a2F390597010878A3e04FB',
+    97: '0xb346fb7F3cB569BC09A327eD52e17095F2A92f4E',
+    56: '',
+  },
+  thopVault: {
+    97: '0xe6b361d5E654c1CC8dbF5121648fA49376496c12',
     56: '',
   },
 }

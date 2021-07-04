@@ -14,6 +14,7 @@ import {
   getMasterChefAddress,
   getClaimRefundAddress,
   getTradingCompetitionAddress,
+  getThopVaultAddress,
 } from 'utils/addressHelpers'
 
 // ABI
@@ -28,6 +29,7 @@ import sousChefBnb from 'config/abi/sousChefBnb.json'
 import claimRefundAbi from 'config/abi/claimRefund.json'
 import tradingCompetitionAbi from 'config/abi/tradingCompetition.json'
 import chronostoneAbi from 'config/abi/Chronostone.json'
+import thopVaultAbi from 'config/abi/thopVault.json'
 
 const getContract = (abi: any, address: string, web3?: Web3) => {
   const _web3 = web3 ?? web3NoAccount
@@ -65,4 +67,7 @@ export const getClaimRefundContract = (web3?: Web3) => {
 }
 export const getTradingCompetitionContract = (web3?: Web3) => {
   return getContract(tradingCompetitionAbi, getTradingCompetitionAddress(), web3)
+}
+export const getThopVaultContract = (web3?: Web3) => {
+  return getContract(thopVaultAbi, getThopVaultAddress(), web3)
 }

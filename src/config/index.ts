@@ -5,6 +5,8 @@ BigNumber.config({
   DECIMAL_PLACES: 80,
 })
 
+const BIG_TEN = new BigNumber(10)
+
 export const BSC_BLOCK_TIME = 3
 
 // CAKE_PER_BLOCK details
@@ -18,8 +20,11 @@ export const BSC_BLOCK_TIME = 3
 export const CAKE_PER_BLOCK = new BigNumber(40)
 export const BLOCKS_PER_YEAR = new BigNumber((60 / BSC_BLOCK_TIME) * 60 * 24 * 365) // 10512000
 export const BASE_URL = 'https://chronoswap.finance'
-export const BASE_EXCHANGE_URL = 'https://exchange.pancakeswap.finance'
+export const BASE_EXCHANGE_URL = 'https://exchange.chronoswap.finance'
 export const BASE_ADD_LIQUIDITY_URL = `${BASE_EXCHANGE_URL}/#/add`
 export const BASE_LIQUIDITY_POOL_URL = `${BASE_EXCHANGE_URL}/#/pool`
 export const LOTTERY_MAX_NUMBER_OF_TICKETS = 50
 export const LOTTERY_TICKET_PRICE = 1
+export const DEFAULT_TOKEN_DECIMAL = BIG_TEN.pow(18)
+export const DEFAULT_GAS_LIMIT = 200000
+export const DEFAULT_GAS_PRICE = 5

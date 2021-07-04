@@ -26,8 +26,26 @@
     },
     {
       "data": {
+        "stringId": 282,
+        "text": "This bounty is given as a reward for providing a service to other users."
+      }
+    },
+    {
+      "data": {
+        "stringId": 283,
+        "text": "Whenever you successfully claim the bounty, you’re also helping out by activating the Auto CAKE Pool’s compounding function for everyone."
+      }
+    },
+    {
+      "data": {
         "stringId": 284,
         "text": "Cambio"
+      }
+    },
+    {
+      "data": {
+        "stringId": 285,
+        "text": "Auto-Compound Bounty: %fee%% of all Auto CAKE pool users pending yield"
       }
     },
     {
@@ -38,8 +56,20 @@
     },
     {
       "data": {
+        "stringId": 287,
+        "text": "Bounty collected!"
+      }
+    },
+    {
+      "data": {
         "stringId": 288,
         "text": "Votaciones"
+      }
+    },
+    {
+      "data": {
+        "stringId": 289,
+        "text": "ThoP bounty has been sent to your wallet."
       }
     },
     {
@@ -482,6 +512,12 @@
     },
     {
       "data": {
+        "stringId": 467,
+        "text": "What's this?"
+      }
+    },
+    {
+      "data": {
         "stringId": 468,
         "text": "Lottery ticket purchases are final."
       }
@@ -512,8 +548,20 @@
     },
     {
       "data": {
+        "stringId": 479,
+        "text": "Could not be collected"
+      }
+    },
+    {
+      "data": {
         "stringId": 480,
         "text": "Claim prizes"
+      }
+    },
+    {
+      "data": {
+        "stringId": 481,
+        "text": "Claim"
       }
     },
     {
@@ -524,8 +572,20 @@
     },
     {
       "data": {
+        "stringId": 483,
+        "text": "There may be an issue with your transaction, or another user claimed the bounty first."
+      }
+    },
+    {
+      "data": {
         "stringId": 484,
         "text": "Phase 2: CLAIMING"
+      }
+    },
+    {
+      "data": {
+        "stringId": 485,
+        "text": "You'll claim"
       }
     },
     {
@@ -536,8 +596,20 @@
     },
     {
       "data": {
+        "stringId": 487,
+        "text": "Pool total pending yield"
+      }
+    },
+    {
+      "data": {
         "stringId": 488,
         "text": "Pending Confirmation"
+      }
+    },
+    {
+      "data": {
+        "stringId": 489,
+        "text": "Bounty"
       }
     },
     {
@@ -728,6 +800,12 @@
     },
     {
       "data": {
+        "stringId": 545,
+        "text": "Value staked"
+      }
+    },
+    {
+      "data": {
         "stringId": 546,
         "text": "ThoP in Wallet"
       }
@@ -848,6 +926,12 @@
     },
     {
       "data": {
+        "stringId": 589,
+        "text": "Stake tokens to earn ThoP."
+      }
+    },
+    {
+      "data": {
         "stringId": 590,
         "text": "\u2b50\ufe0f Every time you stake and unstake LP tokens, the contract will automatically harvest ThoP rewards for you!"
       }
@@ -856,6 +940,12 @@
       "data": {
         "stringId": 592,
         "text": "How to take part"
+      }
+    },
+    {
+      "data": {
+        "stringId": 593,
+        "text": "Auto ThoP bounty"
       }
     },
     {
@@ -1252,6 +1342,24 @@
       "data": {
         "stringId": 728,
         "text": "In Wallet"
+      }
+    },
+    {
+      "data": {
+        "stringId": 729,
+        "text": "Cards in wallet"
+      }
+    },
+    {
+      "data": {
+        "stringId": 730,
+        "text": "Crates in wallet"
+      }
+    },
+    {
+      "data": {
+        "stringId": 731,
+        "text": "Get more NFT"
       }
     },
     {

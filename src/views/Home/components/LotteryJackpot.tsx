@@ -3,7 +3,7 @@ import { Text } from '@chronoswap-packages/uikit'
 import { getBalanceNumber } from 'utils/formatBalance'
 import { useTotalRewards } from 'hooks/useTickets'
 import useI18n from 'hooks/useI18n'
-import { usePriceCakeBusd } from 'state/hooks'
+import { usePriceThopBusd } from 'state/hooks'
 import { BigNumber } from 'bignumber.js'
 import CardBusdValue from './CardBusdValue'
 
@@ -14,7 +14,7 @@ const LotteryJackpot = () => {
   const lotteryPrizeAmountCake = balance.toLocaleString(undefined, {
     maximumFractionDigits: 2,
   })
-  const cakePriceBusd = usePriceCakeBusd()
+  const cakePriceBusd = usePriceThopBusd()
   const lotteryPrizeAmountBusd = new BigNumber(balance).multipliedBy(cakePriceBusd).toNumber()
 
   return (

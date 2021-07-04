@@ -1,21 +1,26 @@
 import { useEffect, useMemo } from 'react'
 import BigNumber from 'bignumber.js'
+import { useWeb3React } from '@web3-react/core'
 import { kebabCase } from 'lodash'
 import { Toast, toastTypes } from '@chronoswap-packages/uikit'
 import { useSelector } from 'react-redux'
 import { useAppDispatch } from 'state'
 import { getWeb3NoAccount } from 'utils/web3'
 import useRefresh from 'hooks/useRefresh'
+import { State, Farm, Staking, Pool, PriceState } from 'state/types'
 import {
   fetchFarmsPublicDataAsync,
+  fetchStakingsPublicDataAsync,
   fetchPoolsPublicDataAsync,
   fetchPoolsUserDataAsync,
+  fetchThopVaultPublicData,
+  fetchThopVaultUserData,
+  fetchThopVaultFees,
   push as pushToast,
   remove as removeToast,
   clear as clearToast,
   setBlock,
 } from './actions'
-import { State, Farm, Pool, PriceState } from './types'
 import { fetchPrices } from './prices'
 
 export const useFetchPublicData = () => {
@@ -23,6 +28,7 @@ export const useFetchPublicData = () => {
   const { slowRefresh } = useRefresh()
   useEffect(() => {
     dispatch(fetchFarmsPublicDataAsync())
+    dispatch(fetchStakingsPublicDataAsync())
     dispatch(fetchPoolsPublicDataAsync())
   }, [dispatch, slowRefresh])
 
@@ -85,6 +91,118 @@ export const usePoolFromPid = (sousId): Pool => {
   return pool
 }
 
+export const useFetchThopVault = () => {
+  const { account } = useWeb3React()
+  const { fastRefresh } = useRefresh()
+  const dispatch = useAppDispatch()
+
+  useEffect(() => {
+    dispatch(fetchThopVaultPublicData())
+  }, [dispatch, fastRefresh])
+
+  useEffect(() => {
+    dispatch(fetchThopVaultUserData({ account }))
+  }, [dispatch, fastRefresh, account])
+
+  useEffect(() => {
+    dispatch(fetchThopVaultFees())
+  }, [dispatch])
+}
+
+export const useThopVault = () => {
+  const {
+    totalShares: totalSharesAsString,
+    pricePerFullShare: pricePerFullShareAsString,
+    totalThopInVault: totalThopInVaultAsString,
+    estimatedThopBountyReward: estimatedThopBountyRewardAsString,
+    totalPendingThopHarvest: totalPendingThopHarvestAsString,
+    fees: { performanceFee, callFee, withdrawalFee, withdrawalFeePeriod },
+    userData: {
+      isLoading,
+      userShares: userSharesAsString,
+      thopAtLastUserAction: thopAtLastUserActionAsString,
+      lastDepositedTime,
+      lastUserActionTime,
+    },
+  } = useSelector((state: State) => state.pools.thopVault)
+
+  const estimatedThopBountyReward = useMemo(() => {
+    return new BigNumber(estimatedThopBountyRewardAsString)
+  }, [estimatedThopBountyRewardAsString])
+
+  const totalPendingThopHarvest = useMemo(() => {
+    return new BigNumber(totalPendingThopHarvestAsString)
+  }, [totalPendingThopHarvestAsString])
+
+  const totalShares = useMemo(() => {
+    return new BigNumber(totalSharesAsString)
+  }, [totalSharesAsString])
+
+  const pricePerFullShare = useMemo(() => {
+    return new BigNumber(pricePerFullShareAsString)
+  }, [pricePerFullShareAsString])
+
+  const totalThopInVault = useMemo(() => {
+    return new BigNumber(totalThopInVaultAsString)
+  }, [totalThopInVaultAsString])
+
+  const userShares = useMemo(() => {
+    return new BigNumber(userSharesAsString)
+  }, [userSharesAsString])
+
+  const thopAtLastUserAction = useMemo(() => {
+    return new BigNumber(thopAtLastUserActionAsString)
+  }, [thopAtLastUserActionAsString])
+
+  return {
+    totalShares,
+    pricePerFullShare,
+    totalThopInVault,
+    estimatedThopBountyReward,
+    totalPendingThopHarvest,
+    fees: {
+      performanceFee,
+      callFee,
+      withdrawalFee,
+      withdrawalFeePeriod,
+    },
+    userData: {
+      isLoading,
+      userShares,
+      thopAtLastUserAction,
+      lastDepositedTime,
+      lastUserActionTime,
+    },
+  }
+}
+
+// Staking
+export const useStakings = (): Staking[] => {
+  const stakings = useSelector((state: State) => state.stakings.data)
+  return stakings
+}
+
+export const useStakingFromPid = (pid): Staking => {
+  const staking = useSelector((state: State) => state.stakings.data.find((s) => s.pid === pid))
+  return staking
+}
+
+export const useStakingFromSymbol = (stakingTokenSymbol: string): Staking => {
+  const staking = useSelector((state: State) => state.stakings.data.find((s) => s.stakingToken.symbol === stakingTokenSymbol))
+  return staking
+}
+
+export const useStakingUser = (pid) => {
+  const staking = useStakingFromPid(pid)
+
+  return {
+    allowance: staking.userData ? new BigNumber(staking.userData.allowance) : new BigNumber(0),
+    tokenBalance: staking.userData ? new BigNumber(staking.userData.tokenBalance) : new BigNumber(0),
+    stakedBalance: staking.userData ? new BigNumber(staking.userData.stakedBalance) : new BigNumber(0),
+    earnings: staking.userData ? new BigNumber(staking.userData.earnings) : new BigNumber(0),
+  }
+}
+
 // Toasts
 export const useToast = () => {
   const dispatch = useAppDispatch()
@@ -136,15 +254,15 @@ export const useGetApiPrice = (token: string) => {
   return prices[token.toLowerCase()]
 }
 
-export const usePriceCakeBusd = (): BigNumber => {
+export const usePriceThopBusd = (): BigNumber => {
   const ZERO = new BigNumber(0)
-  const cakeBnbFarm = useFarmFromPid(1) // TODO definir las granjas que usaremos para el precio
-  const bnbBusdFarm = useFarmFromPid(2)
+  const thopBnbFarm = useFarmFromPid(2) // TODO definir las granjas que usaremos para el precio
+  const bnbBusdFarm = useFarmFromPid(3)
 
   const bnbBusdPrice = bnbBusdFarm.tokenPriceVsQuote ? new BigNumber(1).div(bnbBusdFarm.tokenPriceVsQuote) : ZERO
-  const cakeBusdPrice = cakeBnbFarm.tokenPriceVsQuote ? bnbBusdPrice.times(cakeBnbFarm.tokenPriceVsQuote) : ZERO
+  const thopBusdPrice = thopBnbFarm.tokenPriceVsQuote ? bnbBusdPrice.times(thopBnbFarm.tokenPriceVsQuote) : ZERO
 
-  return cakeBusdPrice
+  return thopBusdPrice
 }
 
 // Block

@@ -107,6 +107,7 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, account }
     : '-'
   const lpLabel = farm.lpSymbol && farm.lpSymbol.toUpperCase().replace('ONETHOUSAND', '')
   const earnLabel = farm.dual ? farm.dual.earnLabel : 'ThoP'
+  const feeLabel = farm.depositFee ? farm.depositFee : '0%'
   const farmAPY = farm.apy && farm.apy.toLocaleString('en-US', { maximumFractionDigits: 2 })
 
   const liquidityUrlPathParts = getLiquidityUrlPathParts({
@@ -147,6 +148,10 @@ const FarmCard: React.FC<FarmCardProps> = ({ farm, removed, cakePrice, account }
       <Flex justifyContent="space-between">
         <Text>{TranslateString(318, 'Earn')}:</Text>
         <Text bold>{earnLabel}</Text>
+      </Flex>
+      <Flex justifyContent="space-between">
+        <Text>{TranslateString(10001, 'Deposit fee')}:</Text>
+        <Text bold>{feeLabel}%</Text>
       </Flex>
       <CardActionsContainer farm={farm} account={account} addLiquidityUrl={addLiquidityUrl} />
       <Divider />

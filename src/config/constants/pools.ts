@@ -7,11 +7,12 @@ const pools: PoolConfig[] = [
     stakingToken: tokens.cake,
     earningToken: tokens.cake,
     contractAddress: {
-      97: '0x29C90d224aeB34541019d6e048CCed8939e3551E',
+      97: '0x66B25aD35ac9CE7487eEDec14A621c95e6D2eE8D',
       1337: '0x8f6DC524242A26399d81CAFF101db95C9d0232D8',
       56: '0x73feaa1eE314F8c655E354234017bE2193C9E24E',
     },
     poolCategory: PoolCategory.CORE,
+    isAutoVault: false,
     harvest: true,
     tokenPerBlock: '10',
     sortOrder: 1,

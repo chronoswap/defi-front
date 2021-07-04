@@ -18,7 +18,7 @@ import Balance from 'components/Balance'
 import { PoolCategory } from 'config/constants/types'
 import tokens from 'config/constants/tokens'
 import { Pool } from 'state/types'
-import { useGetApiPrice, usePriceCakeBusd } from 'state/hooks'
+import { useGetApiPrice, usePriceThopBusd } from 'state/hooks'
 import DepositModal from './DepositModal'
 import WithdrawModal from './WithdrawModal'
 import CompoundModal from './CompoundModal'
@@ -59,7 +59,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool }) => {
   const { onReward } = useSousHarvest(sousId, isBnbPool)
 
   // APY
-  const stakingTokenPrice = usePriceCakeBusd().toNumber()
+  const stakingTokenPrice = usePriceThopBusd().toNumber()
   let rewardTokenPrice = useGetApiPrice(earningToken.address ? getAddress(earningToken.address, true) : '') // TODO este segundo argumento habrá que quitarlo
   rewardTokenPrice = sousId === 0 ? stakingTokenPrice : rewardTokenPrice
   const apy = getPoolApy(
@@ -96,7 +96,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool }) => {
   const [onPresentCompound] = useModal(
     <CompoundModal earnings={earnings} onConfirm={onStake} tokenName={stakingToken.symbol} />,
   )
-  const poolImage = `${pool.earningToken.symbol}-${pool.stakingToken.symbol}.svg`.toLocaleLowerCase()
+  const poolImage = `${pool.earningToken.symbol}-${pool.stakingToken.symbol}.png`.toLocaleLowerCase()
   const [onPresentWithdraw] = useModal(
     <WithdrawModal
       max={stakedBalance}

@@ -2,7 +2,7 @@ import React from 'react'
 import { Card, CardBody, Heading, Text } from '@chronoswap-packages/uikit'
 import styled from 'styled-components'
 import { getBalanceNumber } from 'utils/formatBalance'
-import { usePriceCakeBusd } from 'state/hooks'
+import { usePriceThopBusd } from 'state/hooks'
 import { useTotalSupply, useBurnedBalance } from 'hooks/useTokenBalance'
 import useI18n from 'hooks/useI18n'
 import useGetThoPPerBlock from 'hooks/useGetThoPPerBlock'
@@ -28,7 +28,7 @@ const ChroStats = () => {
   const burnedBalance = getBalanceNumber(useBurnedBalance(getCakeAddress()))
   const cakeSupply = totalSupply ? totalSupply - burnedBalance : 0
   const thoPPerBlock = getBalanceNumber(useGetThoPPerBlock())
-  const priceCakeBusd = usePriceCakeBusd()
+  const priceCakeBusd = usePriceThopBusd()
   const marketCap = cakeSupply ? cakeSupply * priceCakeBusd.toNumber() : 0
 
   return (

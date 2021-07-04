@@ -60,7 +60,10 @@ const Farm: React.FC = () => {
         </Route>
         <Route path={`${path}/history`}>
           {orderBy(finishedPools, ['sortOrder']).map((pool) => (
-            <PoolCard key={pool.sousId} pool={pool} />
+            pool.isAutoVault?
+              <PoolCard key={pool.sousId} pool={pool} />
+            :
+              <PoolCard key={pool.sousId} pool={pool} /> // <ThopVaultCard key="auto-cake" pool={pool} showStakedOnly={stakedOnly} />
           ))}
         </Route>
       </FlexLayout>

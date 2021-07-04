@@ -4,7 +4,7 @@ import { useWeb3React } from '@web3-react/core'
 import BigNumber from 'bignumber.js'
 import { Text, Card, CardBody, Heading } from '@chronoswap-packages/uikit'
 import useI18n from 'hooks/useI18n'
-import { usePriceCakeBusd } from 'state/hooks'
+import { usePriceThopBusd } from 'state/hooks'
 import useAllEarnings from 'hooks/useAllEarnings'
 import useStakedPrices from 'hooks/useStakedPrices'
 import UnlockButton from 'components/UnlockButton'
@@ -32,6 +32,11 @@ const UserValueCard = () => {
   const priceInFarms = farmsWithStake.reduce((accum, farm) => {
     return accum + new BigNumber(farm.userData.stakedBalance).div(new BigNumber(10).pow(18)).times(farm.lpPrice).toNumber()
   }, 0)
+  // Stakings staked
+  const stakingsWithStake = stakedPrices.stakings
+  const priceInStakings = stakingsWithStake.reduce((accum, staking) => {
+    return accum + new BigNumber(staking.userData.stakedBalance).div(new BigNumber(10).pow(18)).times(staking.stakingTokenPrice).toNumber()
+  }, 0)
   // Pools staked
   const poolsWithStake = stakedPrices.pools
   const priceInPools = poolsWithStake.reduce((accum, pool) => {
@@ -42,10 +47,10 @@ const UserValueCard = () => {
   const earningsSum = allEarnings.reduce((accum, earning) => {
     return accum + new BigNumber(earning).div(new BigNumber(10).pow(18)).toNumber()
   }, 0)
-  const cakePriceBusd = usePriceCakeBusd()
+  const cakePriceBusd = usePriceThopBusd()
   const earningsBusd = new BigNumber(earningsSum).multipliedBy(cakePriceBusd).toNumber()
 
-  const totalValue = priceInFarms + earningsBusd + priceInPools
+  const totalValue = priceInFarms + earningsBusd + priceInPools + priceInStakings
 
   return (
     <StyledCakeStats>
@@ -58,6 +63,10 @@ const UserValueCard = () => {
             <Row>
               <Text fontSize="14px">{TranslateString(539, 'Value in farms')}</Text>
               {priceInFarms && <CardValue fontSize="14px" prefix="$" value={priceInFarms} />}
+            </Row>
+            <Row>
+              <Text fontSize="14px">{TranslateString(545, 'Value in staking')}</Text>
+              {priceInStakings && <CardValue fontSize="14px" prefix="$" value={priceInStakings} />}
             </Row>
             <Row>
               <Text fontSize="14px">{TranslateString(541, 'Value in pools')}</Text>

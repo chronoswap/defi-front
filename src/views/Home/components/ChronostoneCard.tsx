@@ -1,26 +1,22 @@
-import React, { useState, useCallback } from 'react'
+import React from 'react'
 import styled from 'styled-components'
+import { useHistory } from 'react-router-dom'
 import { Heading, Card, CardBody, Button } from '@chronoswap-packages/uikit'
 import { useWeb3React } from '@web3-react/core'
 import useI18n from 'hooks/useI18n'
-import { useAllHarvest } from 'hooks/useHarvest'
-import useFarmsWithBalance from 'hooks/useFarmsWithBalance'
+import useGetWalletNfts from 'hooks/useGetWalletNfts'
 import UnlockButton from 'components/UnlockButton'
-import CakeHarvestBalance from './CakeHarvestBalance'
-import CakeWalletBalance from './CakeWalletBalance'
+import CardValue from './CardValue'
 
 const StyledFarmStakingCard = styled(Card)`
-  background-image: url('/images/cake-bg.svg');
+  background-image: url('/images/chrono-bg.svg');
   background-repeat: no-repeat;
   background-position: top right;
   min-height: 376px;
 `
 
 const Block = styled.div`
-  margin-bottom: 16px;
-`
-
-const CardImage = styled.img`
+  display: flex;
   margin-bottom: 16px;
 `
 
@@ -33,25 +29,17 @@ const Actions = styled.div`
   margin-top: 24px;
 `
 
-const FarmedStakingCard = () => {
-  const [pendingTx, setPendingTx] = useState(false)
+const ChronostoneCard = () => {
   const { account } = useWeb3React()
   const TranslateString = useI18n()
-  const farmsWithBalance = useFarmsWithBalance()
-  const balancesWithValue = farmsWithBalance.filter((balanceType) => balanceType.balance.toNumber() > 0)
+  const history = useHistory()
+  const walletNft = useGetWalletNfts()
+  const cardsInWallet = walletNft?walletNft.filter((nft) => nft.title.includes("Card")):[]
+  const cratesInWallet = walletNft?walletNft.filter((nft) => !nft.title.includes("Card")):[]
 
-  const { onReward } = useAllHarvest(balancesWithValue.map((farmWithBalance) => farmWithBalance.pid))
-
-  const harvestAllFarms = useCallback(async () => {
-    setPendingTx(true)
-    try {
-      await onReward()
-    } catch (error) {
-      // TODO: find a way to handle when the user rejects transaction or it fails
-    } finally {
-      setPendingTx(false)
-    }
-  }, [onReward])
+  const toCollectibles = () => {
+    history.push('/collectibles')
+  }
 
   return (
     <StyledFarmStakingCard>
@@ -59,28 +47,22 @@ const FarmedStakingCard = () => {
         <Heading scale="xl" mb="24px">
           {TranslateString(577, 'Chronostone')}
         </Heading>
-        <CardImage src="/images/cake.svg" alt="cake logo" width={64} height={64} />
         <Block>
-          <Label>{TranslateString(544, 'TKN1 to Harvest')}:</Label>
-          <CakeHarvestBalance />
+          <Label>{TranslateString(729, 'Cards in wallet')}:</Label>
+          <CardValue value={cardsInWallet.length} lineHeight="1.5" decimals={0} />
         </Block>
         <Block>
-          <Label>{TranslateString(546, 'TKN1 in Wallet')}:</Label>
-          <CakeWalletBalance />
+          <Label>{TranslateString(730, 'Crates in Wallet')}:</Label>
+          <CardValue value={cratesInWallet.length} lineHeight="1.5" decimals={0} />
         </Block>
         <Actions>
           {account ? (
             <Button
-              id="harvest-all"
-              disabled={balancesWithValue.length <= 0 || pendingTx}
-              onClick={harvestAllFarms}
+              id="get-nft"
               width="100%"
+              onClick={toCollectibles}
             >
-              {pendingTx
-                ? TranslateString(548, 'Collecting CAKE')
-                : TranslateString(532, `Harvest all (${balancesWithValue.length})`, {
-                    count: balancesWithValue.length,
-                  })}
+            {TranslateString(731, 'Get more NFT')}
             </Button>
           ) : (
             <UnlockButton width="100%" />
@@ -91,4 +73,4 @@ const FarmedStakingCard = () => {
   )
 }
 
-export default FarmedStakingCard
+export default ChronostoneCard

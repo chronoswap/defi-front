@@ -5,12 +5,13 @@ import { useWeb3React } from '@web3-react/core'
 import useI18n from 'hooks/useI18n'
 import { useAllHarvest } from 'hooks/useHarvest'
 import useFarmsWithBalance from 'hooks/useFarmsWithBalance'
+import useStakingsWithBalance from 'hooks/useStakingsWithBalance'
 import UnlockButton from 'components/UnlockButton'
 import CakeHarvestBalance from './CakeHarvestBalance'
 import CakeWalletBalance from './CakeWalletBalance'
 
 const StyledFarmStakingCard = styled(Card)`
-  background-image: url('/images/cake-bg.svg');
+  background-image: url('/images/chrono-bg.svg');
   background-repeat: no-repeat;
   background-position: top right;
   min-height: 376px;
@@ -38,7 +39,8 @@ const FarmedStakingCard = () => {
   const { account } = useWeb3React()
   const TranslateString = useI18n()
   const farmsWithBalance = useFarmsWithBalance()
-  const balancesWithValue = farmsWithBalance.filter((balanceType) => balanceType.balance.toNumber() > 0)
+  const stakingsWithBalance = useStakingsWithBalance()
+  const balancesWithValue = [...farmsWithBalance, ...stakingsWithBalance].filter((balanceType) => balanceType.balance.toNumber() > 0)
 
   const { onReward } = useAllHarvest(balancesWithValue.map((farmWithBalance) => farmWithBalance.pid))
 
@@ -59,7 +61,7 @@ const FarmedStakingCard = () => {
         <Heading scale="xl" mb="24px">
           {TranslateString(542, 'Farms & Staking')}
         </Heading>
-        <CardImage src="/images/cake.svg" alt="cake logo" width={64} height={64} />
+        <CardImage src="/images/thop.png" alt="thop logo" width={64} height={64} />
         <Block>
           <Label>{TranslateString(544, 'ThoP to Harvest')}:</Label>
           <CakeHarvestBalance />
