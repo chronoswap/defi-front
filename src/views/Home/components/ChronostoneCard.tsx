@@ -9,7 +9,7 @@ import UnlockButton from 'components/UnlockButton'
 import CardValue from './CardValue'
 
 const StyledFarmStakingCard = styled(Card)`
-  background-image: url('/images/chrono-bg.svg');
+  background-image: url('/images/thop-bg.svg');
   background-repeat: no-repeat;
   background-position: top right;
   min-height: 376px;

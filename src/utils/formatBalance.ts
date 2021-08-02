@@ -18,3 +18,11 @@ export const getDecimalAmount = (amount: BigNumber, decimals = 18) => {
 export const getBalanceAmount = (amount: BigNumber, decimals = 18) => {
   return new BigNumber(amount).dividedBy(BIG_TEN.pow(decimals))
 }
+
+export const formatNumber = (number: number, minPrecision = 2, maxPrecision = 2) => {
+  const options = {
+    minimumFractionDigits: minPrecision,
+    maximumFractionDigits: maxPrecision,
+  }
+  return number.toLocaleString(undefined, options)
+}

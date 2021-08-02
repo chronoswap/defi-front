@@ -80,8 +80,20 @@
     },
     {
       "data": {
+        "stringId": 291,
+        "text": "Subtracted automatically from each yield harvest and burned."
+      }
+    },
+    {
+      "data": {
         "stringId": 292,
         "text": "Unlock Wallet"
+      }
+    },
+    {
+      "data": {
+        "stringId": 293,
+        "text": "Total amount of %symbol% staked in this pool"
       }
     },
     {
@@ -92,8 +104,20 @@
     },
     {
       "data": {
+        "stringId": 295,
+        "text": "Max. stake per user"
+      }
+    },
+    {
+      "data": {
         "stringId": 296,
         "text": "Total %asset% Supply"
+      }
+    },
+    {
+      "data": {
+        "stringId": 297,
+        "text": "Blocks"
       }
     },
     {
@@ -104,8 +128,20 @@
     },
     {
       "data": {
+        "stringId": 299,
+        "text": "Performance fee"
+      }
+    },
+    {
+      "data": {
         "stringId": 300,
         "text": "Pending harvest"
+      }
+    },
+    {
+      "data": {
+        "stringId": 301,
+        "text": "See token info"
       }
     },
     {
@@ -116,8 +152,20 @@
     },
     {
       "data": {
+        "stringId": 303,
+        "text": "You must harvest and compound your earnings from this pool manually."
+      }
+    },
+    {
+      "data": {
         "stringId": 304,
         "text": "Total ThoP burned since launch"
+      }
+    },
+    {
+      "data": {
+        "stringId": 305,
+        "text": "Any funds you stake in this pool will be automagically harvested and restaked (compounded) for you."
       }
     },
     {
@@ -128,8 +176,20 @@
     },
     {
       "data": {
+        "stringId": 307,
+        "text": "Your %symbol% earnings have also been harvested to your wallet!"
+      }
+    },
+    {
+      "data": {
         "stringId": 308,
         "text": "Telegram"
+      }
+    },
+    {
+      "data": {
+        "stringId": 309,
+        "text": "Your %symbol% funds have been staked in the pool!"
       }
     },
     {
@@ -140,14 +200,32 @@
     },
     {
       "data": {
+        "stringId": 311,
+        "text": "Maximum total stake: %amount% %token%"
+      }
+    },
+    {
+      "data": {
         "stringId": 312,
         "text": "Github"
       }
     },
     {
       "data": {
+        "stringId": 313,
+        "text": "Balance: %balance%"
+      }
+    },
+    {
+      "data": {
         "stringId": 314,
         "text": "Twitter"
+      }
+    },
+    {
+      "data": {
+        "stringId": 315,
+        "text": "Max stake for this pool: %amount% %token%"
       }
     },
     {
@@ -164,8 +242,20 @@
     },
     {
       "data": {
+        "stringId": 319,
+        "text": "Earn ThoP, stake ThoP."
+      }
+    },
+    {
+      "data": {
         "stringId": 320,
         "text": "Stake LP tokens to earn ThoP"
+      }
+    },
+    {
+      "data": {
+        "stringId": 321,
+        "text": "Stake %symbol%"
       }
     },
     {
@@ -182,8 +272,20 @@
     },
     {
       "data": {
+        "stringId": 329,
+        "text": "Staked"
+      }
+    },
+    {
+      "data": {
         "stringId": 330,
         "text": "%asset% Earned"
+      }
+    },
+    {
+      "data": {
+        "stringId": 331,
+        "text": "Earned"
       }
     },
     {
@@ -194,14 +296,44 @@
     },
     {
       "data": {
+        "stringId": 333,
+        "text": "Staked (compounding)"
+      }
+    },
+    {
+      "data": {
         "stringId": 334,
         "text": "Every time you stake and unstake ThoP tokens, the contract will automatically harvest ThoP rewards for you!"
       }
     },
     {
       "data": {
+        "stringId": 335,
+        "text": "Contract enabled"
+      }
+    },
+    {
+      "data": {
+        "stringId": 336,
+        "text": "You can now stake in the %symbol% pool!"
+      }
+    },
+    {
+      "data": {
+        "stringId": 337,
+        "text": "Ends in"
+      }
+    },
+    {
+      "data": {
         "stringId": 338,
         "text": "The Sous Chef is cooking up a treat for all PEPPER holders"
+      }
+    },
+    {
+      "data": {
+        "stringId": 339,
+        "text": "Starts in"
       }
     },
     {
@@ -248,6 +380,12 @@
     },
     {
       "data": {
+        "stringId": 353,
+        "text": "APR (incl. LP rewards)"
+      }
+    },
+    {
+      "data": {
         "stringId": 354,
         "text": "Total Liquidity"
       }
@@ -266,8 +404,20 @@
     },
     {
       "data": {
+        "stringId": 357,
+        "text": "Base APR (yield only)"
+      }
+    },
+    {
+      "data": {
         "stringId": 358,
         "text": "ThoP price"
+      }
+    },
+    {
+      "data": {
+        "stringId": 359,
+        "text": "Total staked"
       }
     },
     {
@@ -308,8 +458,20 @@
     },
     {
       "data": {
+        "stringId": 385,
+        "text": "Stake"
+      }
+    },
+    {
+      "data": {
         "stringId": 386,
         "text": "Farming starts in %num% Blocks"
+      }
+    },
+    {
+      "data": {
+        "stringId": 387,
+        "text": "Enable"
       }
     },
     {
@@ -320,8 +482,20 @@
     },
     {
       "data": {
+        "stringId": 389,
+        "text": "Only applies within 3 days of staking. Unstaking after 3 days will not include a fee. Timer resets every time you stake new THOP in the pool."
+      }
+    },
+    {
+      "data": {
         "stringId": 390,
         "text": "Farming ends in %num% Blocks"
+      }
+    },
+    {
+      "data": {
+        "stringId": 391,
+        "text": "Unstaking fee: %fee%%"
       }
     },
     {
@@ -332,8 +506,44 @@
     },
     {
       "data": {
+        "stringId": 393,
+        "text": "Unstaking fee"
+      }
+    },
+    {
+      "data": {
         "stringId": 394,
         "text": "Unstake SYRUP"
+      }
+    },
+    {
+      "data": {
+        "stringId": 395,
+        "text": "Earned since your last action"
+      }
+    },
+    {
+      "data": {
+        "stringId": 396,
+        "text": "Recent ThoP profit"
+      }
+    },
+    {
+      "data": {
+        "stringId": 397,
+        "text": "unstaking fee until"
+      }
+    },
+    {
+      "data": {
+        "stringId": 398,
+        "text": "unstaking fee if withdrawn within 72h"
+      }
+    },
+    {
+      "data": {
+        "stringId": 399,
+        "text": "Unstaked!"
       }
     },
     {
@@ -344,8 +554,26 @@
     },
     {
       "data": {
+        "stringId": 401,
+        "text": "Your earnings have also been harvested to your wallet"
+      }
+    },
+    {
+      "data": {
         "stringId": 402,
         "text": "Stake PEPPER to earn new tokens."
+      }
+    },
+    {
+      "data": {
+        "stringId": 403,
+        "text": "Error"
+      }
+    },
+    {
+      "data": {
+        "stringId": 404,
+        "text": "Please try again. Confirm the transaction and make sure you are paying enough gas!"
       }
     },
     {
@@ -358,6 +586,12 @@
       "data": {
         "stringId": 408,
         "text": "Total"
+      }
+    },
+    {
+      "data": {
+        "stringId": 409,
+        "text": "Start earning"
       }
     },
     {
@@ -380,8 +614,20 @@
     },
     {
       "data": {
+        "stringId": 413,
+        "text": "View contract"
+      }
+    },
+    {
+      "data": {
         "stringId": 414,
         "text": "Your Chronoswapy Project"
+      }
+    },
+    {
+      "data": {
+        "stringId": 415,
+        "text": "Add to Metamask"
       }
     },
     {
@@ -392,14 +638,38 @@
     },
     {
       "data": {
+        "stringId": 417,
+        "text": "You’ll need %symbol% to stake in this pool!"
+      }
+    },
+    {
+      "data": {
         "stringId": 418,
         "text": "Apply now"
       }
     },
     {
       "data": {
+        "stringId": 419,
+        "text": "Buy some %symbol%, or make sure your %symbol% isn’t in another pool or LP."
+      }
+    },
+    {
+      "data": {
         "stringId": 420,
         "text": "Phase 1: BUYING"
+      }
+    },
+    {
+      "data": {
+        "stringId": 421,
+        "text": "Buy"
+      }
+    },
+    {
+      "data": {
+        "stringId": 422,
+        "text": "Locate access"
       }
     },
     {
@@ -422,8 +692,20 @@
     },
     {
       "data": {
+        "stringId": 429,
+        "text": "You’ve already staked the maximum amount you can stake in this pool!"
+      }
+    },
+    {
+      "data": {
         "stringId": 430,
         "text": "Buy ticket"
+      }
+    },
+    {
+      "data": {
+        "stringId": 431,
+        "text": "Insufficient %symbol% balance"
       }
     },
     {
@@ -508,6 +790,12 @@
       "data": {
         "stringId": 464,
         "text": "Confirm"
+      }
+    },
+    {
+      "data": {
+        "stringId": 465,
+        "text": "Confirming"
       }
     },
     {
@@ -663,7 +951,13 @@
     {
       "data": {
         "stringId": 506,
-        "text": "Get ThoP-BNB LP >"
+        "text": "Get ThoP-BNB LP"
+      }
+    },
+    {
+      "data": {
+        "stringId": 507,
+        "text": "Get %symbol%"
       }
     },
     {
@@ -674,14 +968,32 @@
     },
     {
       "data": {
+        "stringId": 509,
+        "text": "%day%d : %hour%h : %minute%m"
+      }
+    },
+    {
+      "data": {
         "stringId": 510,
         "text": "You get the tokens."
       }
     },
     {
       "data": {
+        "stringId": 511,
+        "text": "APY includes compounding, APR doesn’t. This pool’s CAKE is compounded automatically, so we show APY."
+      }
+    },
+    {
+      "data": {
         "stringId": 512,
         "text": "Want to launch your own IFO?"
+      }
+    },
+    {
+      "data": {
+        "stringId": 513,
+        "text": "This pool’s rewards aren’t compounded automatically, so we show APR"
       }
     },
     {
@@ -848,6 +1160,12 @@
     },
     {
       "data": {
+        "stringId": 557,
+        "text": "Collect"
+      }
+    },
+    {
+      "data": {
         "stringId": 558,
         "text": "Buy Tickets"
       }
@@ -860,8 +1178,32 @@
     },
     {
       "data": {
+        "stringId": 563,
+        "text": "Harvest: collect ThoP and send to wallet"
+      }
+    },
+    {
+      "data": {
         "stringId": 564,
         "text": "Approve"
+      }
+    },
+    {
+      "data": {
+        "stringId": 565,
+        "text": "Compounded"
+      }
+    },
+    {
+      "data": {
+        "stringId": 566,
+        "text": "Your %symbol% earnings have been re-invested into the pool!"
+      }
+    },
+    {
+      "data": {
+        "stringId": 567,
+        "text": "Harvested"
       }
     },
     {
@@ -880,6 +1222,12 @@
       "data": {
         "stringId": 574,
         "text": "Staking Pool"
+      }
+    },
+    {
+      "data": {
+        "stringId": 575,
+        "text": "%symbol% required"
       }
     },
     {
@@ -914,14 +1262,32 @@
     },
     {
       "data": {
+        "stringId": 583,
+        "text": "Timeframe"
+      }
+    },
+    {
+      "data": {
         "stringId": 584,
         "text": "For Sale"
       }
     },
     {
       "data": {
+        "stringId": 585,
+        "text": "ROI"
+      }
+    },
+    {
+      "data": {
         "stringId": 586,
         "text": "ThoP to burn (USD)"
+      }
+    },
+    {
+      "data": {
+        "stringId": 587,
+        "text": "Stake in pool"
       }
     },
     {
@@ -944,6 +1310,12 @@
     },
     {
       "data": {
+        "stringId": 591,
+        "text": "%symbol% per $1,000"
+      }
+    },
+    {
+      "data": {
         "stringId": 592,
         "text": "How to take part"
       }
@@ -962,8 +1334,20 @@
     },
     {
       "data": {
+        "stringId": 595,
+        "text": "%num%d"
+      }
+    },
+    {
+      "data": {
         "stringId": 596,
         "text": "Buy ThoP and BNB tokens"
+      }
+    },
+    {
+      "data": {
+        "stringId": 597,
+        "text": "365d (APY)"
       }
     },
     {
@@ -974,8 +1358,20 @@
     },
     {
       "data": {
+        "stringId": 599,
+        "text": "Calculated based on current rates."
+      }
+    },
+    {
+      "data": {
         "stringId": 600,
         "text": "During Sale"
+      }
+    },
+    {
+      "data": {
+        "stringId": 601,
+        "text": "Compounding %freq%x daily."
       }
     },
     {
@@ -986,8 +1382,20 @@
     },
     {
       "data": {
+        "stringId": 603,
+        "text": "LP rewards: 0.17% trading fees, distributed proportionally among LP token holders."
+      }
+    },
+    {
+      "data": {
         "stringId": 604,
         "text": "After Sale"
+      }
+    },
+    {
+      "data": {
+        "stringId": 605,
+        "text": "All figures are estimates provided for your convenience only, and by no means represent guaranteed returns."
       }
     },
     {
@@ -998,8 +1406,20 @@
     },
     {
       "data": {
+        "stringId": 607,
+        "text": "All estimated rates take into account this pool’s %fee%% performance fee"
+      }
+    },
+    {
+      "data": {
         "stringId": 608,
         "text": "Done!"
+      }
+    },
+    {
+      "data": {
+        "stringId": 609,
+        "text": "APY"
       }
     },
     {
@@ -1010,8 +1430,20 @@
     },
     {
       "data": {
+        "stringId": 611,
+        "text": "APR"
+      }
+    },
+    {
+      "data": {
         "stringId": 612,
         "text": "Connect"
+      }
+    },
+    {
+      "data": {
+        "stringId": 613,
+        "text": "Compounding"
       }
     },
     {
@@ -1022,8 +1454,20 @@
     },
     {
       "data": {
+        "stringId": 615,
+        "text": "Auto"
+      }
+    },
+    {
+      "data": {
         "stringId": 616,
         "text": "Register your interest in winning an NFT below."
+      }
+    },
+    {
+      "data": {
+        "stringId": 617,
+        "text": "Manual"
       }
     },
     {
@@ -1034,8 +1478,20 @@
     },
     {
       "data": {
+        "stringId": 619,
+        "text": "Autmatic restaking"
+      }
+    },
+    {
+      "data": {
         "stringId": 620,
         "text": "Learn more"
+      }
+    },
+    {
+      "data": {
+        "stringId": 621,
+        "text": "Harvesting"
       }
     },
     {
@@ -1144,6 +1600,12 @@
       "data": {
         "stringId": 658,
         "text": "Details"
+      }
+    },
+    {
+      "data": {
+        "stringId": 659,
+        "text": "Hide"
       }
     },
     {
@@ -1282,6 +1744,12 @@
       "data": {
         "stringId": 704,
         "text": "Compound"
+      }
+    },
+    {
+      "data": {
+        "stringId": 705,
+        "text": "Compound: collect and restake ThoP into pool."
       }
     },
     {

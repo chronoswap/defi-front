@@ -140,3 +140,28 @@ export const soushHarvestBnb = async (sousChefContract, account) => {
       return tx.transactionHash
     })
 }
+
+export const vaultWithdrawAll = async (thopVaultContract, account) => {
+  return thopVaultContract.methods
+    .withdrawAll()
+    .send({ from: account, gas: 200000, value: new BigNumber(0) })
+    .on('transactionHash', (tx) => {
+      return tx.transactionHash
+    })
+}
+export const vaultWithdraw = async (thopVaultContract, account) => {
+  return thopVaultContract.methods
+    .withdraw()
+    .send({ from: account, gas: 200000, value: new BigNumber(0) })
+    .on('transactionHash', (tx) => {
+      return tx.transactionHash
+    })
+}
+export const vaultDeposit = async (thopVaultContract, account) => {
+  return thopVaultContract.methods
+    .deposit()
+    .send({ from: account, gas: 200000, value: new BigNumber(0) })
+    .on('transactionHash', (tx) => {
+      return tx.transactionHash
+    })
+}

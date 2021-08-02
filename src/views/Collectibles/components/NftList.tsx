@@ -1,8 +1,7 @@
 import React from 'react'
-// import orderBy from 'lodash/orderBy'
-// import nfts from 'config/constants/nfts'
-// import useGetWalletNfts from 'hooks/useGetWalletNfts'
-// import NftCard from './NftCard'
+import orderBy from 'lodash/orderBy'
+import useGetWalletNfts from 'hooks/useGetWalletNfts'
+import NftCard from './NftCard'
 import NftGrid from './NftGrid'
 
 /**
@@ -35,8 +34,17 @@ import NftGrid from './NftGrid'
 // }
 
 const NftList = () => {
+  const walletNfts = useGetWalletNfts()
   return (
-    <NftGrid />
+    <NftGrid >
+    {orderBy(walletNfts, 'sortOrder').map((nft) => {
+      return (
+        <div key={nft.properties.name}>
+          <NftCard nft={nft} />
+        </div>
+      )
+    })}
+    </NftGrid>
   )
 }
 

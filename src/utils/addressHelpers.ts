@@ -12,7 +12,7 @@ export const getAddress = (address: Address, check?: boolean): string => {
 }
 
 export const getCakeAddress = () => {
-  return getAddress(tokens.cake.address)
+  return getAddress(tokens.thop.address)
 }
 export const getMasterChefAddress = () => {
   return getAddress(addresses.masterChef)

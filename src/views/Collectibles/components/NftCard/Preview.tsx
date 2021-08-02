@@ -1,9 +1,9 @@
 import React from 'react'
 import styled from 'styled-components'
-import { Nft } from 'config/constants/types'
+import { Nfts } from 'state/types'
 
 interface PreviewProps {
-  nft: Nft
+  nft: Nfts
   isOwned?: boolean
 }
 
@@ -26,38 +26,16 @@ const StyledImage = styled.img`
   border-radius: 32px 32px 0 0;
 `
 
-const StyledVideo = styled.video`
-  height: 100%;
-  width: 100%;
-`
-
 const Preview: React.FC<PreviewProps> = ({ nft, isOwned = false }) => {
-  const { images, name, video } = nft
-  const previewImageSrc = `/images/nfts/${images.lg}`
-
-  if (video) {
-    const videoComponent = (
-      <StyledVideo autoPlay controls={false} loop muted poster={previewImageSrc}>
-        <source src={video.webm} type="video/webm" />
-        <source src={video.mp4} type="video/mp4" />
-      </StyledVideo>
-    )
-
-    return isOwned ? (
-      <a href={images.ipfs} target="_blank" rel="noreferrer noopener">
-        {videoComponent}
-      </a>
-    ) : (
-      videoComponent
-    )
-  }
+  const { image, name } = nft.properties
+  const previewImageSrc = '/images/nfts/circular.lg'
 
   const previewImage = <StyledImage src={previewImageSrc} alt={name} />
 
   return (
     <Container>
       {isOwned ? (
-        <a href={images.ipfs} target="_blank" rel="noreferrer noopener">
+        <a href="https://previews.123rf.com/images/dny3d/dny3d1512/dny3d151200027/50232830-3d-old-wooden-crate-on-white-background.jpg" target="_blank" rel="noreferrer noopener">
           {previewImage}
         </a>
       ) : (

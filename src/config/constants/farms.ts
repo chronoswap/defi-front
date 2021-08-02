@@ -10,7 +10,7 @@ const farms: FarmConfig[] = [
       1337: '0x646A336CD183dc947D3AdbEfb19c3cF637720318',
       56: '',
     },
-    token: tokens.cake,
+    token: tokens.thop,
     quoteToken: tokens.wbnb,
   },
   {
@@ -20,7 +20,7 @@ const farms: FarmConfig[] = [
       97: '0xbbe838cfc0a79caf780c9b70c5d41bbd1254a983',
       56: '',
     },
-    token: tokens.cake,
+    token: tokens.thop,
     quoteToken: tokens.wbnb,
   },
   {
@@ -40,7 +40,7 @@ const farms: FarmConfig[] = [
       97: '0xf2bdfcfc607c7eb7c4b448e4020a5d481055f72a',
       56: '',
     },
-    token: tokens.cake,
+    token: tokens.thop,
     quoteToken: tokens.eth,
   },
   {

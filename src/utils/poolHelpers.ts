@@ -1,9 +1,8 @@
 import BigNumber from 'bignumber.js'
-import { Pool } from 'state/types'
 import { apyModalRoi, tokenEarnedPerThousandDollarsCompounding } from 'utils/compoundApyHelpers'
-import { getAddress } from 'utils/addressHelpers'
 import { getPoolApy } from 'utils/apy'
 import { getBalanceNumber, getFullDisplayBalance, getDecimalAmount } from 'utils/formatBalance'
+import { Pool } from 'state/types'
 
 export const convertSharesToThop = (
   shares: BigNumber,
@@ -36,20 +35,8 @@ export const convertThopToShares = (
 const AUTO_VAULT_COMPOUND_FREQUENCY = 288
 const MANUAL_POOL_COMPOUND_FREQUENCY = 1
 
-export const getAprData = (pool: Pool, performanceFee: number, prices: number[], priceThopBusd: BigNumber) => {
-  const { isAutoVault, earningToken, stakingToken } = pool
-  let earningTokenPrice
-  if (prices) {
-    earningTokenPrice = earningToken.symbol === 'ThoP'?priceThopBusd:new BigNumber(prices[getAddress(earningToken.address, true)]) // TODO ojo el true
-  } else {
-    earningTokenPrice = new BigNumber(0)
-  }
-  let stakingTokenPrice
-  if (prices) {
-    stakingTokenPrice = stakingToken.symbol === 'ThoP'?priceThopBusd:new BigNumber(prices[getAddress(stakingToken.address, true)])
-  } else {
-    stakingTokenPrice = new BigNumber(0)
-  }
+export const getAprData = (pool: Pool, performanceFee: number, stakingTokenPrice: number, earningTokenPrice: number) => {
+  const { isAutoVault, stakingToken } = pool
   const apr = getPoolApy(
     stakingTokenPrice,
     earningTokenPrice,

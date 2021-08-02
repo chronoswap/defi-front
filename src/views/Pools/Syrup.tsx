@@ -11,9 +11,23 @@ import { usePools, useBlock } from 'state/hooks'
 import FlexLayout from 'components/layout/Flex'
 import Page from 'components/layout/Page'
 import Coming from './components/Coming'
+import CakeVaultCard from './components/CakeVaultCard'
 import PoolCard from './components/PoolCard'
 import PoolTabButtons from './components/PoolTabButtons'
 import Divider from './components/Divider'
+
+const Header = styled.div`
+  padding: 32px 0px;
+  background: ${({ theme }) => theme.colors.gradients.bubblegum};
+
+  padding-left: 16px;
+  padding-right: 16px;
+
+  ${({ theme }) => theme.mediaQueries.sm} {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+`
 
 const Farm: React.FC = () => {
   const { path } = useRouteMatch()
@@ -33,41 +47,38 @@ const Farm: React.FC = () => {
   )
 
   return (
-    <Page>
-      <Hero>
-        <div>
-          <Heading as="h1" scale="xxl" mb="16px">
-            {TranslateString(738, 'Syrup Pool')}
-          </Heading>
-          <ul>
-            <li>{TranslateString(580, 'Stake CAKE to earn new tokens.')}</li>
-            <li>{TranslateString(486, 'You can unstake at any time.')}</li>
-            <li>{TranslateString(406, 'Rewards are calculated per block.')}</li>
-          </ul>
-        </div>
-        <img src="/images/syrup.png" alt="SYRUP POOL icon" width={410} height={191} />
-      </Hero>
-      <PoolTabButtons stakedOnly={stakedOnly} setStakedOnly={setStakedOnly} />
-      <Divider />
-      <FlexLayout>
-        <Route exact path={`${path}`}>
-          <>
-            {stakedOnly
-              ? orderBy(stakedOnlyPools, ['sortOrder']).map((pool) => <PoolCard key={pool.sousId} pool={pool} />)
-              : orderBy(openPools, ['sortOrder']).map((pool) => <PoolCard key={pool.sousId} pool={pool} />)}
-            <Coming />
-          </>
-        </Route>
-        <Route path={`${path}/history`}>
-          {orderBy(finishedPools, ['sortOrder']).map((pool) => (
-            pool.isAutoVault?
-              <PoolCard key={pool.sousId} pool={pool} />
-            :
-              <PoolCard key={pool.sousId} pool={pool} /> // <ThopVaultCard key="auto-cake" pool={pool} showStakedOnly={stakedOnly} />
-          ))}
-        </Route>
-      </FlexLayout>
-    </Page>
+    <>
+      <Header>
+        <Heading as="h1" scale="xxl" color="secondary" mb="24px">
+          {TranslateString(676, 'Pools')}
+        </Heading>
+        <Heading scale="lg" color="text">
+          {TranslateString(580, 'Stake ThoP to earn new tokens.')}
+        </Heading>
+      </Header>
+      <Page>
+        <PoolTabButtons stakedOnly={stakedOnly} setStakedOnly={setStakedOnly} />
+        <Divider />
+        <FlexLayout>
+          <Route exact path={`${path}`}>
+            <>
+              {stakedOnly
+                ? orderBy(stakedOnlyPools, ['sortOrder']).map((pool) => <PoolCard key={pool.sousId} pool={pool} />)
+                : orderBy(openPools, ['sortOrder']).map((pool) => <PoolCard key={pool.sousId} pool={pool} />)}
+              <Coming />
+            </>
+          </Route>
+          <Route path={`${path}/history`}>
+            {orderBy(finishedPools, ['sortOrder']).map((pool) => (
+              pool.isAutoVault?
+                <CakeVaultCard key={pool.sousId} pool={pool} showStakedOnly={stakedOnly}/>
+              :
+                <PoolCard key={pool.sousId} pool={pool} />
+            ))}
+          </Route>
+        </FlexLayout>
+      </Page>
+    </>
   )
 }
 

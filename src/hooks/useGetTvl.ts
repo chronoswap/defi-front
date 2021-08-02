@@ -15,7 +15,7 @@ const getFarmPricesJson = (farmsLP, prices, cakePriceBusd) => {
     let tokenPrice = new BigNumber(0).toNumber();
     if (prices) {
       quotePrice = prices[getAddress(element.quoteToken.address)] ? new BigNumber(prices[getAddress(element.quoteToken.address, true)]).toNumber() : new BigNumber(prices[getAddress(element.quoteToken.address, true)]).toNumber();
-      tokenPrice = element.token === tokens.cake ? cakePriceBusd.toNumber() : new BigNumber(prices[getAddress(element.token.address, true)]).toNumber();
+      tokenPrice = element.token === tokens.thop ? cakePriceBusd.toNumber() : new BigNumber(prices[getAddress(element.token.address, true)]).toNumber();
     }
     const quoteTotalPrice = element.quoteTokenAmount ? new BigNumber(element.quoteTokenAmount).times(quotePrice).toNumber() : 0
     const tokenTotalPrice = element.tokenAmount ? new BigNumber(element.tokenAmount).times(tokenPrice).toNumber() : 0
@@ -58,7 +58,7 @@ const useGetStats = () => {
   useEffect(() => {
     const fetchBalances = async () => {
       const poolCalls = poolsConfig.map((poolConfig) => ({
-        address: getAddress(tokens.cake.address),
+        address: getAddress(tokens.thop.address),
         name: 'balanceOf',
         params: [getAddress(poolConfig.contractAddress)],
       }))

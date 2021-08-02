@@ -5,27 +5,27 @@ const stakings: StakingConfig[] = [
   {
     pid: 6,
     stakingToken: tokens.wbnb,
-    rewardToken: tokens.cake,
+    rewardToken: tokens.thop,
   },
   {
     pid: 7,
-    stakingToken: tokens.cake1,
-    rewardToken: tokens.cake,
+    stakingToken: tokens.cake,
+    rewardToken: tokens.thop,
   },
   {
     pid: 8,
     stakingToken: tokens.busd,
-    rewardToken: tokens.cake,
+    rewardToken: tokens.thop,
   },
   {
     pid: 9,
     stakingToken: tokens.dai,
-    rewardToken: tokens.cake,
+    rewardToken: tokens.thop,
   },
   {
     pid: 10,
     stakingToken: tokens.btcb,
-    rewardToken: tokens.cake,
+    rewardToken: tokens.thop,
   },
 ]
 

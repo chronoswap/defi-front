@@ -41,7 +41,7 @@ const config: MenuEntry[] = [
   },
   {
     label: 'Staking',
-    icon: 'HamburgerIcon',
+    icon: 'StakeIcon',
     href: '/staking',
   },
   {

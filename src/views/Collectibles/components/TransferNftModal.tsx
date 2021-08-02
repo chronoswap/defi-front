@@ -4,12 +4,12 @@ import Web3 from 'web3'
 import { useWeb3React } from '@web3-react/core'
 import { Button, Input, Modal, Text } from '@chronoswap-packages/uikit'
 import { useToast } from 'state/hooks'
-import { Nft } from 'config/constants/types'
+import { Nfts } from 'state/types'
 import useI18n from 'hooks/useI18n'
 import InfoRow from './InfoRow'
 
 interface TransferNftModalProps {
-  nft: Nft
+  nft: Nfts
   tokenIds: number[]
   onSuccess: () => any
   onDismiss?: () => void
@@ -88,7 +88,7 @@ const TransferNftModal: React.FC<TransferNftModalProps> = ({ nft, tokenIds, onSu
         )}
         <InfoRow>
           <Text>{TranslateString(999, 'Transferring')}:</Text>
-          <Value>{`1x "${nft.name}" NFT`}</Value>
+          <Value>{`1x "${nft.properties.name}" NFT`}</Value>
         </InfoRow>
         <Label htmlFor="transferAddress">{TranslateString(999, 'Receiving address')}:</Label>
         <Input

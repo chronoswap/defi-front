@@ -96,7 +96,7 @@ const PoolCard: React.FC<HarvestProps> = ({ pool }) => {
   const [onPresentCompound] = useModal(
     <CompoundModal earnings={earnings} onConfirm={onStake} tokenName={stakingToken.symbol} />,
   )
-  const poolImage = `${pool.earningToken.symbol}-${pool.stakingToken.symbol}.png`.toLocaleLowerCase()
+  const poolImage = `${pool.earningToken.symbol}-${pool.stakingToken.symbol}.svg`.toLocaleLowerCase()
   const [onPresentWithdraw] = useModal(
     <WithdrawModal
       max={stakedBalance}

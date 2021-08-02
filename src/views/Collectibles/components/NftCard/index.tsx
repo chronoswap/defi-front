@@ -1,111 +1,40 @@
-import React, { useState } from 'react'
-import { PromiEvent } from 'web3-core'
-import { Contract } from 'web3-eth-contract'
+import React from 'react'
 import styled from 'styled-components'
 import {
   Card,
   CardBody,
   Heading,
   Tag,
-  Button,
-  ChevronUpIcon,
-  ChevronDownIcon,
-  Text,
-  CardFooter,
-  useModal,
 } from '@chronoswap-packages/uikit'
 import useI18n from 'hooks/useI18n'
-import { Nft } from 'config/constants/types'
+import { Nfts } from 'state/types'
 import InfoRow from '../InfoRow'
-import TransferNftModal from '../TransferNftModal'
-import ClaimNftModal from '../ClaimNftModal'
 import Preview from './Preview'
 
 export interface NftCardProps {
-  nft: Nft
-  canClaim?: boolean
+  nft: Nfts
   tokenIds?: number[]
-  onClaim: () => PromiEvent<Contract>
-  lastUpdated: number
-  refresh: () => void
 }
 
 const Header = styled(InfoRow)`
   min-height: 28px;
 `
 
-const DetailsButton = styled(Button).attrs({ variant: 'text' })`
-  height: auto;
-  padding: 16px 24px;
-
-  &:hover:not(:disabled):not(:active) {
-    background-color: transparent;
-  }
-
-  &:focus:not(:active) {
-    box-shadow: none;
-  }
-`
-
-const InfoBlock = styled.div`
-  padding: 24px;
-`
-
-const NftCard: React.FC<NftCardProps> = ({ nft, canClaim = false, tokenIds = [], onClaim, refresh }) => {
-  const [isOpen, setIsOpen] = useState(false)
+const NftCard: React.FC<NftCardProps> = ({ nft }) => {
   const TranslateString = useI18n()
-  const { name, description } = nft
-  const walletOwnsNft = tokenIds.length > 0
-  const Icon = isOpen ? ChevronUpIcon : ChevronDownIcon
-
-  const handleClick = async () => {
-    setIsOpen(!isOpen)
-  }
-
-  const handleSuccess = () => {
-    refresh()
-  }
-
-  const [onPresentTransferModal] = useModal(
-    <TransferNftModal nft={nft} tokenIds={tokenIds} onSuccess={handleSuccess} />,
-  )
-  const [onPresentClaimModal] = useModal(<ClaimNftModal nft={nft} onSuccess={handleSuccess} onClaim={onClaim} />)
+  const { name, description } = nft.properties
 
   return (
-    <Card isActive={walletOwnsNft}>
-      <Preview nft={nft} isOwned={walletOwnsNft} />
+    <Card>
+      <Preview nft={nft} />
       <CardBody>
         <Header>
           <Heading>{name}</Heading>
-          {walletOwnsNft && (
-            <Tag outline variant="secondary">
-              {TranslateString(728, 'In Wallet')}
-            </Tag>
-          )}
+          <Tag outline variant="secondary">
+            {TranslateString(728, 'In Wallet')}
+          </Tag>
         </Header>
-        {canClaim && (
-          <Button width="100%" mt="24px" onClick={onPresentClaimModal}>
-            {TranslateString(652, 'Claim this NFT')}
-          </Button>
-        )}
-        {walletOwnsNft && (
-          <Button width="100%" variant="secondary" mt="24px" onClick={onPresentTransferModal}>
-            {TranslateString(999, 'Transfer')}
-          </Button>
-        )}
       </CardBody>
-      <CardFooter p="0">
-        <DetailsButton width="100%" endIcon={<Icon width="24px" color="primary" />} onClick={handleClick}>
-          {TranslateString(658, 'Details')}
-        </DetailsButton>
-        {isOpen && (
-          <InfoBlock>
-            <Text as="p" color="textSubtle" style={{ textAlign: 'center' }}>
-              {description}
-            </Text>
-          </InfoBlock>
-        )}
-      </CardFooter>
     </Card>
   )
 }

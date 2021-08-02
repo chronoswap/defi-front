@@ -5,11 +5,11 @@ import { Contract } from 'web3-eth-contract'
 import { useWeb3React } from '@web3-react/core'
 import { useToast } from 'state/hooks'
 import { Button, InjectedModalProps, Modal, Text, Flex, AutoRenewIcon } from '@chronoswap-packages/uikit'
-import { Nft } from 'config/constants/types'
+import { Nfts } from 'state/types'
 import useI18n from 'hooks/useI18n'
 
 interface ClaimNftModalProps extends InjectedModalProps {
-  nft: Nft
+  nft: Nfts
   onSuccess: () => void
   onClaim: () => PromiEvent<Contract>
 }
@@ -52,7 +52,7 @@ const ClaimNftModal: React.FC<ClaimNftModalProps> = ({ nft, onSuccess, onClaim, 
       <ModalContent>
         <Flex alignItems="center" mb="8px" justifyContent="space-between">
           <Text>{TranslateString(626, 'You will receive')}:</Text>
-          <Text bold>{`1x "${nft.name}" Collectible`}</Text>
+          <Text bold>{`1x "${nft.properties.name}" Collectible`}</Text>
         </Flex>
       </ModalContent>
       <Actions>

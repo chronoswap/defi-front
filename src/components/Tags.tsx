@@ -1,5 +1,6 @@
 import React from 'react'
-import { Tag, VerifiedIcon, CommunityIcon, BinanceIcon } from '@chronoswap-packages/uikit'
+import useI18n from 'hooks/useI18n'
+import { Tag, VerifiedIcon, CommunityIcon, BinanceIcon, AutoRenewIcon, RefreshIcon } from '@chronoswap-packages/uikit'
 
 const CoreTag = (props) => (
   <Tag variant="secondary" outline startIcon={<VerifiedIcon color="secondary" />} {...props}>
@@ -25,4 +26,22 @@ const DualTag = (props) => (
   </Tag>
 )
 
-export { CoreTag, CommunityTag, BinanceTag, DualTag }
+const CompoundingPoolTag = (props) => {
+  const TranslateString = useI18n()
+  return (
+    <Tag variant="success" outline startIcon={<AutoRenewIcon width="18px" color="success" mr="4px" />} {...props}>
+      {TranslateString(615, 'Auto')}
+    </Tag>
+  )
+}
+
+const ManualPoolTag = (props) => {
+  const TranslateString = useI18n()
+  return (
+    <Tag variant="secondary" outline startIcon={<RefreshIcon width="18px" color="secondary" mr="4px" />} {...props}>
+      {TranslateString(617, 'Manual')}
+    </Tag>
+  )
+}
+
+export { CoreTag, CommunityTag, BinanceTag, DualTag, CompoundingPoolTag, ManualPoolTag }

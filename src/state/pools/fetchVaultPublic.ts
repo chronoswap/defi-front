@@ -1,8 +1,9 @@
 import BigNumber from 'bignumber.js'
-import { convertSharesToThop } from 'views/Pools/helpers'
 import thopVaultAbi from 'config/abi/thopVault.json'
 import { getThopVaultAddress } from 'utils/addressHelpers'
 import multicall from 'utils/multicall'
+import { getBalanceNumber, getFullDisplayBalance, getDecimalAmount } from 'utils/formatBalance'
+
 
 const BIG_ZERO = new BigNumber(0)
 
@@ -25,7 +26,15 @@ export const fetchPublicVaultData = async () => {
 
     const totalSharesAsBigNumber = shares ? new BigNumber(shares.toString()) : BIG_ZERO
     const sharePriceAsBigNumber = sharePrice ? new BigNumber(sharePrice.toString()) : BIG_ZERO
-    const totalThopInVaultEstimate = convertSharesToThop(totalSharesAsBigNumber, sharePriceAsBigNumber)
+
+    const sharePriceNumber = getBalanceNumber(sharePriceAsBigNumber, 18)
+    const amountInThop = new BigNumber(totalSharesAsBigNumber.multipliedBy(sharePriceNumber))
+    const thopAsNumberBalance = getBalanceNumber(amountInThop, 18)
+    const thopAsBigNumber = getDecimalAmount(new BigNumber(thopAsNumberBalance), 18)
+    const thopAsDisplayBalance = getFullDisplayBalance(amountInThop, 18, 3)
+    const totalThopInVaultEstimate = { thopAsNumberBalance, thopAsBigNumber, thopAsDisplayBalance }
+
+    // const totalThopInVaultEstimate = convertSharesToThop(totalSharesAsBigNumber, sharePriceAsBigNumber)
     return {
       totalShares: totalSharesAsBigNumber.toJSON(),
       pricePerFullShare: sharePriceAsBigNumber.toJSON(),
@@ -68,5 +77,3 @@ export const fetchVaultFees = async () => {
     }
   }
 }
-
-export default fetchPublicVaultData

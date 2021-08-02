@@ -26,10 +26,14 @@ const Hero = styled.div`
     padding-top: 0;
   }
 `
-
+// TODO cuando añadamos ChronostoneCard:
+//    eliminar display
+//    cambiar center por stretch en ambos
+//    en FarmStakingCard eliminar la propiedad max-width
 const Cards = styled(BaseLayout)`
-  align-items: stretch;
-  justify-content: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-bottom: 32px;
   margin-top: 32px;
 
@@ -66,7 +70,6 @@ const Home: React.FC = () => {
         <>
           <Cards>
             <FarmStakingCard />
-            <ChronostoneCard />
           </Cards>
           <TotalValueLockedCard />
           <Cards>
