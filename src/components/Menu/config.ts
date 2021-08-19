@@ -12,25 +12,11 @@ const config: MenuEntry[] = [
     items: [
       {
         label: 'Exchange',
-        href: 'https://exchange.pancakeswap.finance',
+        href: 'https://pancakeswap.finance/swap?outputCurrency=0x2d0d4d9e1a0fc421046faedea887fde6654561b1',
       },
       {
         label: 'Chart',
-        href: 'https://dex.guru/token/0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82-bsc',
-      },
-    ],
-  },
-  {
-    label: 'CHRO',
-    icon: 'TradeIcon',
-    items: [
-      {
-        label: 'Exchange',
-        href: 'https://exchange.pancakeswap.finance',
-      },
-      {
-        label: 'Chart',
-        href: 'https://dex.guru/token/0xe9e7cea3dedca5984780bafc599bd69add087d56-bsc',
+        href: 'https://dex.guru/token/0x2d0d4d9e1A0fC421046FAeDea887fDE6654561B1-bsc',
       },
     ],
   },
@@ -50,13 +36,13 @@ const config: MenuEntry[] = [
     href: '/pools',
   },
   {
-    label: 'Collectibles',
+    label: 'Chronostone',
     icon: 'NftIcon',
     href: '/collectibles',
     status: menuStatus.SOON,
   },
   {
-    label: 'Info (Pancake)',
+    label: 'Info',
     icon: 'InfoIcon',
     items: [
       {
@@ -87,11 +73,6 @@ const config: MenuEntry[] = [
         status: menuStatus.SOON,
       },
       {
-        label: 'Voting (SOON?)',
-        href: 'https://voting.pancakeswap.finance',
-        status: menuStatus.SOON,
-      },
-      {
         label: 'Github',
         href: 'https://github.com/chronoswap',
       },
@@ -101,12 +82,12 @@ const config: MenuEntry[] = [
       },
       {
         label: 'Blog',
-        href: 'https://pancakeswap.medium.com',
+        href: 'https://chronoswap.medium.com',
         status: menuStatus.SOON,
       },
       {
         label: 'Merch',
-        href: 'https://pancakeswap.creator-spring.com/',
+        href: 'https://chronoswap.creator-spring.com/',
         status: menuStatus.SOON,
       },
     ],

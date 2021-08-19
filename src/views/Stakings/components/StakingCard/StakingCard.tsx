@@ -162,7 +162,7 @@ const StakingCard: React.FC<StakingCardProps> = ({ staking, removed, cakePrice, 
         <DetailsSection
           removed={removed}
           bscScanAddress={`https://bscscan.com/address/${staking.stakingToken.address[process.env.REACT_APP_CHAIN_ID]}`}
-          infoAddress={`https://pancakeswap.info/pair/${lpAddress}`}
+          infoAddress={`https://pancakeswap.info/tokens/${lpAddress}`}
           totalValueFormatted={totalValueFormatted}
           lpLabel={lpLabel}
           addLiquidityUrl={addLiquidityUrl}

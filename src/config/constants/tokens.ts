@@ -6,9 +6,9 @@ const tokens = {
   thop: {
     symbol: 'ThoP',
     address: {
-      56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
+      56: '0x2d0d4d9e1A0fC421046FAeDea887fDE6654561B1',
       1337: '0x646A336CD183dc947D3AdbEfb19c3cF637720318',
-      97: '0x50E22d39c3a93Fbd9800f9ee226D589d24664955',
+      97: '0x06532476c0a6A0999398D52EBc486B9E06A74066',
     },
     decimals: 18,
     projectLink: 'https://chronoswap.finance/',
@@ -36,7 +36,7 @@ const tokens = {
     symbol: 'BUSD',
     address: {
       56: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
-      97: '0xeD24FC36d5Ee211Ea25A80239Fb8C4Cfd80f12Ee',
+      97: '0xed24fc36d5ee211ea25a80239fb8c4cfd80f12ee',
     },
     decimals: 18,
     projectLink: 'https://www.paxos.com/busd/',
@@ -45,7 +45,7 @@ const tokens = {
     symbol: 'CHRO',
     address: {
       56: '0xe9e7cea3dedca5984780bafc599bd69add087d56',
-      97: '0x454b40C8CB72d38F255327EadA7aBa57081178d8',
+      97: '0x8f302b62f777f5b4ef9fDD8C37A92daBc853355B',
     },
     decimals: 18,
     projectLink: 'https://chronoswap.finance/',
@@ -53,7 +53,7 @@ const tokens = {
   eth: {
     symbol: 'ETH',
     address: {
-      56: '0x2170Ed0880ac9A755fd29B2688956BD959F933F8',
+      56: '0x2170ed0880ac9a755fd29b2688956bd959f933f8',
       97: '0xd66c6b4f0be8ce5b39d52e0fd1344c389929b378',
     },
     decimals: 18,
@@ -62,7 +62,7 @@ const tokens = {
   btcb: {
     symbol: 'BTCB',
     address: {
-      56: '0x7130d2A12B9BCbFAe4f2634d864A1Ee1Ce3Ead9c',
+      56: '0x7130d2a12b9bcbfae4f2634d864a1ee1ce3ead9c',
       97: '0xE02dF9e3e622DeBdD69fb838bB799E3F168902c5',
     },
     decimals: 18,
@@ -71,7 +71,7 @@ const tokens = {
   dai: {
     symbol: 'DAI',
     address: {
-      56: '0x1AF3F329e8BE154074D8769D1FFa4eE058B1DBc3',
+      56: '0x1af3f329e8be154074d8769d1ffa4ee058b1dbc3',
       97: '0xec5dcb5dbf4b114c9d0f65bccab49ec54f6a0867',
     },
     decimals: 18,
@@ -80,7 +80,25 @@ const tokens = {
   cake: {
     symbol: 'CAKE',
     address: {
-      56: '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
+      56: '0x0e09fabb73bd3ade0a17ecc321fd13a19e81ce82',
+      97: '0xa35062141Fa33BCA92Ce69FeD37D0E8908868AAe',
+    },
+    decimals: 18,
+    projectLink: 'https://pancakeswap.finance/',
+  },
+  iota: {
+    symbol: 'IOTA',
+    address: {
+      56: '0xd944f1d1e9d5f9bb90b62f9d45e447d989580782',
+      97: '0xa35062141Fa33BCA92Ce69FeD37D0E8908868AAe',
+    },
+    decimals: 6,
+    projectLink: 'https://pancakeswap.finance/',
+  },
+  ada: {
+    symbol: 'ADA',
+    address: {
+      56: '0x3ee2200efb3400fabb9aacf31297cbdd1d435d47',
       97: '0xa35062141Fa33BCA92Ce69FeD37D0E8908868AAe',
     },
     decimals: 18,

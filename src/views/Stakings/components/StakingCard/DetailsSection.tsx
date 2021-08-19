@@ -48,7 +48,7 @@ const DetailsSection: React.FC<ExpandableSectionProps> = ({
         </StyledLinkExternal>
       )}
       <StyledLinkExternal href={bscScanAddress}>{TranslateString(999, 'View Contract')}</StyledLinkExternal>
-      <StyledLinkExternal href={infoAddress}>{TranslateString(999, 'See Pair Info')}</StyledLinkExternal>
+      <StyledLinkExternal href={infoAddress}>{TranslateString(301, 'See Token Info')}</StyledLinkExternal>
     </Wrapper>
   )
 }

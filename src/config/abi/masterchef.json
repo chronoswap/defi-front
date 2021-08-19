@@ -15,6 +15,11 @@
         "internalType": "address",
         "name": "_burnaddr",
         "type": "address"
+      },
+      {
+        "internalType": "address",
+        "name": "_buybackaddr",
+        "type": "address"
       }
     ],
     "stateMutability": "nonpayable",
@@ -145,6 +150,20 @@
   {
     "inputs": [],
     "name": "burnaddr",
+    "outputs": [
+      {
+        "internalType": "address",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function",
+    "constant": true
+  },
+  {
+    "inputs": [],
+    "name": "buybackaddr",
     "outputs": [
       {
         "internalType": "address",

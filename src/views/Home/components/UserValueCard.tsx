@@ -35,12 +35,13 @@ const UserValueCard = () => {
   // Stakings staked
   const stakingsWithStake = stakedPrices.stakings
   const priceInStakings = stakingsWithStake.reduce((accum, staking) => {
-    return accum + new BigNumber(staking.userData.stakedBalance).div(new BigNumber(10).pow(18)).times(staking.stakingTokenPrice).toNumber()
+    const _num = Number.isNaN(staking.stakingTokenPrice.toNumber())?0:new BigNumber(staking.userData.stakedBalance).div(new BigNumber(10).pow(staking.stakingToken.decimals)).times(staking.stakingTokenPrice).toNumber()
+    return accum + _num
   }, 0)
   // Pools staked
   const poolsWithStake = stakedPrices.pools
   const priceInPools = poolsWithStake.reduce((accum, pool) => {
-    return accum + new BigNumber(pool.userData.stakedBalance).div(new BigNumber(10).pow(18)).times(pool.stakingTokenPrice).toNumber()
+    return accum + new BigNumber(pool.userData.stakedBalance).div(new BigNumber(10).pow(pool.stakingToken.decimals)).times(pool.stakingTokenPrice).toNumber()
   }, 0)
   // Earnings to harvest
   const allEarnings = useAllEarnings()
