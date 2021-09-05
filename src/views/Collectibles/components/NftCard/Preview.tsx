@@ -27,7 +27,7 @@ const StyledImage = styled.img`
 `
 
 const Preview: React.FC<PreviewProps> = ({ nft, isOwned = false }) => {
-  const { image, name } = nft.properties
+  const { name } = nft.properties
   const previewImageSrc = '/images/nfts/circular.lg'
 
   const previewImage = <StyledImage src={previewImageSrc} alt={name} />

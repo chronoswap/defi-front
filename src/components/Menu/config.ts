@@ -38,7 +38,7 @@ const config: MenuEntry[] = [
   {
     label: 'Chronostone',
     icon: 'NftIcon',
-    href: '/collectibles',
+    href: '/#',
     status: menuStatus.SOON,
   },
   {
@@ -46,20 +46,12 @@ const config: MenuEntry[] = [
     icon: 'InfoIcon',
     items: [
       {
-        label: 'Overview',
-        href: 'https://pancakeswap.info',
-      },
-      {
         label: 'Tokens',
         href: 'https://pancakeswap.info/tokens',
       },
       {
         label: 'Pairs',
         href: 'https://pancakeswap.info/pairs',
-      },
-      {
-        label: 'Accounts',
-        href: 'https://pancakeswap.info/accounts',
       },
     ],
   },
@@ -69,7 +61,7 @@ const config: MenuEntry[] = [
     items: [
       {
         label: 'Contact',
-        href: 'https://docs.pancakeswap.finance/contact-us',
+        href: 'https://info.chronoswap.finance',
         status: menuStatus.SOON,
       },
       {
@@ -79,16 +71,6 @@ const config: MenuEntry[] = [
       {
         label: 'Docs',
         href: 'https://info.chronoswap.finance',
-      },
-      {
-        label: 'Blog',
-        href: 'https://chronoswap.medium.com',
-        status: menuStatus.SOON,
-      },
-      {
-        label: 'Merch',
-        href: 'https://chronoswap.creator-spring.com/',
-        status: menuStatus.SOON,
       },
     ],
   },

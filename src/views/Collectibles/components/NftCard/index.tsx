@@ -22,7 +22,7 @@ const Header = styled(InfoRow)`
 
 const NftCard: React.FC<NftCardProps> = ({ nft }) => {
   const TranslateString = useI18n()
-  const { name, description } = nft.properties
+  const { name } = nft.properties
 
   return (
     <Card>
