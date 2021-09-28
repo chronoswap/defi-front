@@ -93,7 +93,7 @@ const tokens = {
       97: '0xa35062141Fa33BCA92Ce69FeD37D0E8908868AAe',
     },
     decimals: 6,
-    projectLink: 'https://pancakeswap.finance/',
+    projectLink: 'https://www.iota.org/',
   },
   ada: {
     symbol: 'ADA',
@@ -102,7 +102,7 @@ const tokens = {
       97: '0xa35062141Fa33BCA92Ce69FeD37D0E8908868AAe',
     },
     decimals: 18,
-    projectLink: 'https://pancakeswap.finance/',
+    projectLink: 'https://cardano.org',
   },
 }
 

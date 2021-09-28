@@ -1,5 +1,5 @@
 import BigNumber from 'bignumber.js'
-import { BLOCKS_PER_YEAR, CAKE_PER_BLOCK } from 'config'
+import { BLOCKS_PER_YEAR } from 'config'
 
 /**
  * Get the APY value in %
@@ -28,8 +28,8 @@ export const getPoolApy = (
  * @param poolLiquidityUsd Total pool liquidity in USD
  * @returns
  */
-export const getFarmApy = (poolWeight: BigNumber, cakePriceUsd: BigNumber, poolLiquidityUsd: BigNumber): number => {
-  const yearlyCakeRewardAllocation = CAKE_PER_BLOCK.times(BLOCKS_PER_YEAR).times(poolWeight)
+export const getFarmApy = (poolWeight: BigNumber, cakePriceUsd: BigNumber, poolLiquidityUsd: BigNumber, tokenPerBlock: BigNumber): number => {
+  const yearlyCakeRewardAllocation = tokenPerBlock.times(BLOCKS_PER_YEAR).times(poolWeight)
   const apy = yearlyCakeRewardAllocation.times(cakePriceUsd).div(poolLiquidityUsd).times(100)
   return apy.isNaN() || !apy.isFinite() ? null : apy.toNumber()
 }
@@ -41,8 +41,8 @@ export const getFarmApy = (poolWeight: BigNumber, cakePriceUsd: BigNumber, poolL
  * @param poolLiquidityUsd Total pool liquidity in USD
  * @returns
  */
-export const getStakingApy = (poolWeight: BigNumber, cakePriceUsd: BigNumber, poolLiquidityUsd: BigNumber): number => {
-  const yearlyCakeRewardAllocation = CAKE_PER_BLOCK.times(BLOCKS_PER_YEAR).times(poolWeight)
+export const getStakingApy = (poolWeight: BigNumber, cakePriceUsd: BigNumber, poolLiquidityUsd: BigNumber, tokenPerBlock: BigNumber): number => {
+  const yearlyCakeRewardAllocation = tokenPerBlock.times(BLOCKS_PER_YEAR).times(poolWeight)
   const apy = yearlyCakeRewardAllocation.times(cakePriceUsd).div(poolLiquidityUsd).times(100)
   return apy.isNaN() || !apy.isFinite() ? null : apy.toNumber()
 }

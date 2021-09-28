@@ -15,7 +15,7 @@ import useI18n from 'hooks/useI18n'
 import { getBalanceNumber } from 'utils/formatBalance'
 import { getStakingApy } from 'utils/apy'
 import { orderBy } from 'lodash'
-
+import useGetThoPPerBlock from 'hooks/useGetThoPPerBlock'
 import { getAddress } from 'utils/addressHelpers'
 import StakingCard, { StakingWithStakedValue } from './components/StakingCard/StakingCard'
 import Table from './components/StakingTable/StakingTable'
@@ -121,6 +121,7 @@ const Stakings: React.FC = () => {
   const { account } = useWeb3React()
   const [sortOption, setSortOption] = useState('hot')
   const prices = useGetApiPrices()
+  const _thopPerBlock = useGetThoPPerBlock()
 
   const dispatch = useAppDispatch()
   const { fastRefresh } = useRefresh()
@@ -169,10 +170,10 @@ const Stakings: React.FC = () => {
         if (!staking.stakingTokenAmount || !prices) {
           return staking
         }
-
+        const thopPerBlock = new BigNumber(_thopPerBlock.div(10**18))
         const quoteTokenPriceUsd = prices[getAddress(staking.stakingToken.address, true).toLowerCase()]  // TODO true en el getAddress
         const totalLiquidity = new BigNumber(staking.stakingTokenAmount).times(quoteTokenPriceUsd)
-        const apy = isActive ? getStakingApy(staking.poolWeight, cakePrice, totalLiquidity) : 0
+        const apy = isActive ? getStakingApy(staking.poolWeight, cakePrice, totalLiquidity, thopPerBlock) : 0
 
         return { ...staking, apy, liquidity: totalLiquidity }
       })
@@ -185,7 +186,7 @@ const Stakings: React.FC = () => {
       }
       return stakingsToDisplayWithAPY
     },
-    [cakePrice, prices, query, isActive],
+    [cakePrice, prices, query, isActive, _thopPerBlock],
   )
 
   const handleChangeQuery = (event: React.ChangeEvent<HTMLInputElement>) => {

@@ -17,7 +17,7 @@ export const BSC_BLOCK_TIME = 3
 // CAKE_PER_BLOCK in config/index.ts = 40 as we only change the amount sent to the burn pool which is effectively a farm.
 // CAKE/Block in components/CakeStats.tsx = 22 (40 - Amount sent to burn pool)
 
-export const CAKE_PER_BLOCK = new BigNumber(40)
+export const CAKE_PER_BLOCK = new BigNumber(3.5)
 export const BLOCKS_PER_YEAR = new BigNumber((60 / BSC_BLOCK_TIME) * 60 * 24 * 365) // 10512000
 export const BASE_URL = 'https://chronoswap.finance'
 export const BASE_EXCHANGE_URL = 'https://exchange.chronoswap.finance'
@@ -27,5 +27,5 @@ export const BASE_BSC_SCAN_URL = 'https://bscscan.com'
 export const LOTTERY_MAX_NUMBER_OF_TICKETS = 50
 export const LOTTERY_TICKET_PRICE = 1
 export const DEFAULT_TOKEN_DECIMAL = BIG_TEN.pow(18)
-export const DEFAULT_GAS_LIMIT = 200000
+export const DEFAULT_GAS_LIMIT = 300000
 export const DEFAULT_GAS_PRICE = 5

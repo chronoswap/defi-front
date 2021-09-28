@@ -1838,6 +1838,24 @@
     },
     {
       "data": {
+        "stringId": 858,
+        "text": "ROI"
+      }
+    },
+    {
+      "data": {
+        "stringId": 860,
+        "text": "Timeframe"
+      }
+    },
+    {
+      "data": {
+        "stringId": 864,
+        "text": "ThoP per $1000"
+      }
+    },
+    {
+      "data": {
         "stringId": 10000,
         "text": "The deposit fee will be used to buyback ThoP"
       }

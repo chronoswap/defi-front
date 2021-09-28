@@ -4,6 +4,7 @@ import { Heading, Card, CardBody, Flex, ArrowForwardIcon, Skeleton } from '@chro
 import max from 'lodash/max'
 import { NavLink } from 'react-router-dom'
 import useI18n from 'hooks/useI18n'
+import useGetThoPPerBlock from 'hooks/useGetThoPPerBlock'
 import BigNumber from 'bignumber.js'
 import { getFarmApy } from 'utils/apy'
 import { useFarms, usePriceThopBusd, useGetApiPrices } from 'state/hooks'
@@ -27,23 +28,26 @@ const EarnAPYCard = () => {
   const farmsLP = useFarms()
   const prices = useGetApiPrices()
   const cakePrice = usePriceThopBusd()
+  const _thopPerBlock = useGetThoPPerBlock()
 
   const highestApy = useMemo(() => {
     const apys = farmsLP
       // Filter inactive farms, because their theoretical APY is super high. In practice, it's 0.
       .filter((farm) => farm.pid !== 0 && farm.multiplier !== '0X')
       .map((farm) => {
+
+        const thopPerBlock = new BigNumber(_thopPerBlock.div(10**18))
         if (farm.lpTotalInQuoteToken && prices) {  // TODO la funcion get Address ojito con el true
           const quoteTokenPriceUsd = prices[getAddress(farm.quoteToken.address, true).toLowerCase()]
           const totalLiquidity = new BigNumber(farm.lpTotalInQuoteToken).times(quoteTokenPriceUsd)
-          return getFarmApy(farm.poolWeight, cakePrice, totalLiquidity)
+          return getFarmApy(farm.poolWeight, cakePrice, totalLiquidity, thopPerBlock)
         }
         return null
       })
 
     const maxApy = max(apys)
     return maxApy?.toLocaleString('en-US', { maximumFractionDigits: 2 })
-  }, [cakePrice, farmsLP, prices])
+  }, [cakePrice, farmsLP, prices, _thopPerBlock])
 
   return (
     <StyledFarmStakingCard>

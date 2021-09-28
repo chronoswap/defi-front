@@ -15,7 +15,7 @@ import useI18n from 'hooks/useI18n'
 import { getBalanceNumber } from 'utils/formatBalance'
 import { getFarmApy } from 'utils/apy'
 import { orderBy } from 'lodash'
-
+import useGetThoPPerBlock from 'hooks/useGetThoPPerBlock'
 import { getAddress } from 'utils/addressHelpers'
 import FarmCard, { FarmWithStakedValue } from './components/FarmCard/FarmCard'
 import Table from './components/FarmTable/FarmTable'
@@ -121,6 +121,7 @@ const Farms: React.FC = () => {
   const { account } = useWeb3React()
   const [sortOption, setSortOption] = useState('hot')
   const prices = useGetApiPrices()
+  const _thopPerBlock = useGetThoPPerBlock()
 
   const dispatch = useAppDispatch()
   const { fastRefresh } = useRefresh()
@@ -170,9 +171,10 @@ const Farms: React.FC = () => {
           return farm
         }
 
+        const thopPerBlock = new BigNumber(_thopPerBlock.div(10**18))
         const quoteTokenPriceUsd = prices[getAddress(farm.quoteToken.address, true).toLowerCase()]  // TODO true en el getAddress
         const totalLiquidity = new BigNumber(farm.lpTotalInQuoteToken).times(quoteTokenPriceUsd)
-        const apy = isActive ? getFarmApy(farm.poolWeight, cakePrice, totalLiquidity) : 0
+        const apy = isActive ? getFarmApy(farm.poolWeight, cakePrice, totalLiquidity, thopPerBlock) : 0
 
         return { ...farm, apy, liquidity: totalLiquidity }
       })
@@ -185,7 +187,7 @@ const Farms: React.FC = () => {
       }
       return farmsToDisplayWithAPY
     },
-    [cakePrice, prices, query, isActive],
+    [cakePrice, prices, query, isActive, _thopPerBlock],
   )
 
   const handleChangeQuery = (event: React.ChangeEvent<HTMLInputElement>) => {
