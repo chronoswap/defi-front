@@ -34,7 +34,7 @@
   },
   "dependencies": {
     "@binance-chain/bsc-connector": "^1.0.0",
-    "@chronoswap-packages/uikit": "^1.0.20",
+    "@chronoswap-packages/uikit": "^1.0.26",
     "@crowdin/crowdin-api-client": "^1.10.4",
     "@ethersproject/abi": "^5.0.7",
     "@pancakeswap-libs/uikit": "^0.28.0",

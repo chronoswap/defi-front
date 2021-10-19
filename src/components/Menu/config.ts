@@ -51,7 +51,7 @@ const config: MenuEntry[] = [
       },
       {
         label: 'Pairs',
-        href: 'https://pancakeswap.info/pairs',
+        href: 'https://pancakeswap.info/pools',
       },
     ],
   },
